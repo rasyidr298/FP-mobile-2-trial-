@@ -29,5 +29,5 @@ dependencies {
 
     //trambahan slurr
     implementation 'com.android.support:design:29.0.0'
-    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.synnapps:carouselview:0.1.4'
 }

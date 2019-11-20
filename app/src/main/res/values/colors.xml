@@ -5,4 +5,5 @@
     <color name="colorPrimaryDarkbackup">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="blue">#2FAACE</color>
+    <color name="blue_soft">#B22FAACE</color>
 </resources>

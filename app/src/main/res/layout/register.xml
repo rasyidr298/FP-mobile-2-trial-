@@ -24,6 +24,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
@@ -40,8 +41,8 @@
                     android:src="@drawable/ic_login_hero"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"/>
-            </RelativeLayout>
 
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -117,7 +118,6 @@
                                 android:textSize="12sp" />
                         </com.google.android.material.textfield.TextInputLayout>
 
-
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -135,7 +135,6 @@
                         android:textStyle="bold"
                         style="@style/Widget.AppCompat.Button" />
 
-
                 <TextView
                     android:onClick="onLoginClick"
                     android:layout_below="@+id/btn_register"
@@ -149,7 +148,6 @@
                     android:textStyle="bold"
                     android:background="?attr/selectableItemBackground"
                     android:clickable="true" />
-
 
             </RelativeLayout>
 

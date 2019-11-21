@@ -6,8 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.coswick.travelinktrial.Fragment.BottomNav;
 import com.coswick.travelinktrial.Fragment.FragmentHome;
+import com.google.android.material.navigation.NavigationView;
 
 public class LogIn extends AppCompatActivity {
     Button btn_login;
@@ -21,8 +24,8 @@ public class LogIn extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LogIn.this,FragmentHome.class);
-                startActivity(intent);
+                startActivity(new Intent(LogIn.this, BottomNav.class));
+                Toast.makeText(getApplicationContext(), "Success Login", Toast.LENGTH_SHORT).show();
             }
         });
 

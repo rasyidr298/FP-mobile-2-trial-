@@ -4,261 +4,414 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.FragmentHome">
+    tools:context=".Fragment.FragmentHome"
+    android:background="#FFFF">
 
-    <RelativeLayout
-        android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/blue">
-
-        <RelativeLayout
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_centerVertical="true">
-
-            <Button
-                android:layout_centerVertical="true"
-                android:layout_width="90dp"
-                android:layout_height="40dp"
-                android:background="@drawable/bg_profile">
-            </Button>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="50dp"
-            android:gravity="center">
-
-            <ImageButton
-                style="@style/Widget.AppCompat.Button"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/muka" />
-
-        </RelativeLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true">
+            android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="140dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_logo"/>
+            <RelativeLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/blue"
+                android:elevation="10dp">
+
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true">
+
+                    <Button
+                        android:layout_centerVertical="true"
+                        android:layout_width="90dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_profile">
+                    </Button>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="50dp"
+                    android:gravity="center">
+
+                    <ImageButton
+                        style="@style/Widget.AppCompat.Button"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/muka" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true">
+
+                    <ImageView
+                        android:layout_width="140dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_logo"/>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_alignParentRight="true"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:layout_marginRight="10dp">
+
+                    <Button
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        style="@style/Widget.AppCompat.Button"
+                        android:background="@drawable/ic_add">
+                    </Button>
+
+                    <Button
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        style="@style/Widget.AppCompat.Button"
+                        android:background="@drawable/ic_notifications" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:background="#979494"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/ket_sdg_pop"
+                android:layout_below="@+id/header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_marginLeft="15dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sedang Populer"
+                    android:textStyle="bold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_marginRight="15dp"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/btn_populer"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Selengkapnya >"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lay_carousel"
+                android:layout_below="@+id/ket_sdg_pop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <com.synnapps.carouselview.CarouselView
+                    android:id="@+id/carouselView"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    app:fillColor="#000000"
+                    app:pageColor="#ffff"
+                    app:strokeColor="#fff"
+                    app:radius="3dp"
+                    app:slideInterval="4000"
+                    app:strokeWidth="1dp"
+                    app:animateOnBoundary="false"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:id="@+id/lay_location"
+                android:layout_below="@+id/lay_carousel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_location"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  Location"
+                    android:textStyle="bold"
+                    android:textSize="17sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_below="@+id/lay_location"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_height="match_parent"
+                android:elevation="10dp">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:foregroundGravity="center"
+                    android:id="@+id/viewPager"
+                    android:layout_centerInParent="true"
+                    android:overScrollMode="never"
+                    android:clipToPadding="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp">
+                </androidx.viewpager.widget.ViewPager>
+
+                <View
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:background="#777575"/>
+
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:measureAllChildren="false"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/horisontalbar"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="220dp"
+                        android:layout_height="150dp"
+                        android:layout_margin="10dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/blue"
+                        app:cardCornerRadius="15dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="bottom"
+                            android:gravity="center"
+                            android:text="SEMUA"
+                            android:textColor="#ffff"
+                            android:background="#66000000" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="220dp"
+                        android:layout_height="150dp"
+                        android:layout_margin="10dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/blue"
+                        app:cardCornerRadius="15dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="bottom"
+                            android:gravity="center"
+                            android:text="SEMUA"
+                            android:textColor="#ffff"
+                            android:background="#66000000" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="220dp"
+                        android:layout_height="150dp"
+                        android:layout_margin="10dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/blue"
+                        app:cardCornerRadius="15dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="bottom"
+                            android:gravity="center"
+                            android:text="SEMUA"
+                            android:textColor="#ffff"
+                            android:background="#66000000" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="220dp"
+                        android:layout_height="150dp"
+                        android:layout_margin="10dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/blue"
+                        app:cardCornerRadius="15dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="bottom"
+                            android:gravity="center"
+                            android:text="SEMUA"
+                            android:textColor="#ffff"
+                            android:background="#66000000" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="220dp"
+                        android:layout_height="150dp"
+                        android:layout_margin="10dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/blue"
+                        app:cardCornerRadius="15dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="bottom"
+                            android:gravity="center"
+                            android:text="SEMUA"
+                            android:textColor="#ffff"
+                            android:background="#66000000" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="220dp"
+                        android:layout_height="150dp"
+                        android:layout_margin="10dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/blue"
+                        app:cardCornerRadius="15dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="bottom"
+                            android:gravity="center"
+                            android:text="SEMUA"
+                            android:textColor="#ffff"
+                            android:background="#66000000" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="220dp"
+                        android:layout_height="150dp"
+                        android:layout_margin="10dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/blue"
+                        app:cardCornerRadius="15dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="bottom"
+                            android:gravity="center"
+                            android:text="SEMUA"
+                            android:textColor="#ffff"
+                            android:background="#66000000" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="220dp"
+                        android:layout_height="150dp"
+                        android:layout_margin="10dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/blue"
+                        app:cardCornerRadius="15dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="bottom"
+                            android:gravity="center"
+                            android:text="SEMUA"
+                            android:textColor="#ffff"
+                            android:background="#66000000" />
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
         </LinearLayout>
 
-        <RelativeLayout
-            android:layout_alignParentRight="true"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_centerVertical="true"
-            android:gravity="center"
-            android:layout_marginRight="10dp">
+    </androidx.core.widget.NestedScrollView>
 
-            <Button
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                style="@style/Widget.AppCompat.Button"
-                android:background="@drawable/ic_add">
-            </Button>
-
-            <Button
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                style="@style/Widget.AppCompat.Button"
-                android:background="@drawable/ic_notifications" />
-
-        </RelativeLayout>
-
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:id="@+id/ket_sdg_pop"
-        android:layout_below="@+id/header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10sp">
-
-        <TextView
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:layout_marginRight="140dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sedang Populer"
-            android:textStyle="bold"
-            android:textSize="17sp"/>
-
-        <TextView
-            android:id="@+id/btn_populer"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Selengkapnya >"/>
-    </LinearLayout>
-
-    <RelativeLayout
-        android:id="@+id/lay_carousel"
-        android:layout_below="@+id/ket_sdg_pop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
-
-        <com.synnapps.carouselview.CarouselView
-            android:id="@+id/carouselView"
-            android:layout_width="match_parent"
-            android:layout_height="220dp"
-            app:fillColor="#FFFFFFFF"
-            app:pageColor="#00000000"
-            app:radius="4dp"
-            app:slideInterval="3000"
-            app:strokeColor="@color/blue"
-            app:strokeWidth="1dp"/>
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_marginTop="10dp"
-        android:id="@+id/lay_location"
-        android:layout_below="@+id/lay_carousel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="20dp">
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ic_location"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="  Location"
-            android:textStyle="bold"
-            android:textSize="17sp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_below="@+id/lay_location"
-        android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_height="210dp"
-        android:orientation="horizontal"
-        android:background="@color/blue_soft">
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:layout_marginHorizontal="5dp"
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <androidx.cardview.widget.CardView
-                    android:clickable="true"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:layout_width="110dp"
-                    android:layout_height="180dp"
-                    app:cardCornerRadius="15dp"
-                    app:cardBackgroundColor="@color/blue">
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="SEMUA"
-                android:textColor="#ffff"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="30dp"/>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:layout_marginHorizontal="5dp"
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <androidx.cardview.widget.CardView
-                    android:clickable="true"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:layout_width="110dp"
-                    android:layout_height="180dp"
-                    app:cardCornerRadius="15dp"
-                    app:cardBackgroundColor="@color/blue">
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Yogyakarta"
-                android:textColor="#ffff"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="30dp"/>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:layout_marginHorizontal="5dp"
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <androidx.cardview.widget.CardView
-                    android:clickable="true"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:layout_width="110dp"
-                    android:layout_height="180dp"
-                    app:cardCornerRadius="15dp"
-                    app:cardBackgroundColor="@color/blue">
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Semarang"
-                android:textColor="#ffff"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="30dp"/>
-
-        </RelativeLayout>
-
-    </LinearLayout>
 
 </RelativeLayout>

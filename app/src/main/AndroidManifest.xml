@@ -9,14 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Fragment.BottomNav"></activity>
-        <activity android:name=".WisataPopuler" />
-        <activity android:name=".DetailWisata.CandiPrambananYogyakarta" />
-        <activity android:name=".LokasiWisata.WisataYogyakarta" />
-        <activity android:name=".ScanFalse" />
-        <activity android:name=".ScanTrue" />
-        <activity android:name=".DetailTickets" />
-        <activity android:name=".TransaksiTickets" />
+        <activity android:name=".WisataPopuler"></activity>
+        <activity android:name=".BottomNav"></activity>
         <activity android:name=".Register" />
         <activity android:name=".LogIn" />
         <activity android:name=".SplashScreen">

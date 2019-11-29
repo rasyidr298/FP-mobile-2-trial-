@@ -7,4 +7,15 @@
     <color name="colorAccent">#D81B60</color>
     <color name="blue">#2FAACE</color>
     <color name="blue_soft">#B22FAACE</color>
+
+
+    <color name="color1b">#424549</color>
+    <color name="color2b">#7e455e</color>
+    <color name="color3b">#796e25</color>
+    <color name="color4b">#59717c</color>*/
+
+    <color name="color1">#FFFFFF</color>
+    <color name="color2">#FFFFFF</color>
+    <color name="color3">#FFFFFF</color>
+    <color name="color4">#FFFFFF</color>
 </resources>

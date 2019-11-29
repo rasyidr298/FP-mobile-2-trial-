@@ -11,11 +11,11 @@ import android.view.ViewGroup;
 import com.coswick.travelinktrial.R;
 
 public class FragmentProfile extends Fragment {
-    View v;
+    View view;
 
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        v = inflater.inflate(R.layout.fragment_profile,container,false);
+        view = inflater.inflate(R.layout.fragment_profile,container,false);
 
-        return v;
+        return view;
     }
 }

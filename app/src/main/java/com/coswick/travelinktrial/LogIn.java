@@ -8,10 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.coswick.travelinktrial.Fragment.BottomNav;
-import com.coswick.travelinktrial.Fragment.FragmentHome;
-import com.google.android.material.navigation.NavigationView;
-
 public class LogIn extends AppCompatActivity {
     Button btn_login;
 

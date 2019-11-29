@@ -30,4 +30,6 @@ dependencies {
     //trambahan slurr
     implementation 'com.android.support:design:29.0.0'
     implementation 'com.synnapps:carouselview:0.1.4'
+    implementation 'com.j256.ormlite:ormlite-core:4.48'
+    implementation 'com.j256.ormlite:ormlite-android:4.48'
 }

@@ -7,31 +7,28 @@
     tools:context=".Fragment.FragmentHome"
     android:background="#FFFF">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/blue"
+            android:elevation="10dp">
 
             <RelativeLayout
-                android:id="@+id/header"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:background="@color/blue"
-                android:elevation="10dp">
+                android:layout_height="match_parent"
+                android:layout_marginRight="15dp">
 
                 <RelativeLayout
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:layout_centerVertical="true">
+                    android:layout_centerVertical="true"
+                    android:layout_width="80dp"
+                    android:layout_height="50dp">
 
                     <Button
+                        android:id="@+id/button_profile"
                         android:layout_centerVertical="true"
-                        android:layout_width="90dp"
-                        android:layout_height="40dp"
+                        android:layout_width="85dp"
+                        android:layout_height="35dp"
                         android:background="@drawable/bg_profile">
                     </Button>
 
@@ -41,13 +38,13 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="50dp"
+                    android:layout_marginLeft="40dp"
                     android:gravity="center">
 
                     <ImageButton
                         style="@style/Widget.AppCompat.Button"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/muka" />
 
                 </RelativeLayout>
@@ -66,17 +63,16 @@
 
                 <RelativeLayout
                     android:layout_alignParentRight="true"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_centerVertical="true"
-                    android:gravity="center"
-                    android:layout_marginRight="10dp">
+                    android:gravity="center">
 
                     <Button
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         style="@style/Widget.AppCompat.Button"
                         android:background="@drawable/ic_add">
                     </Button>
@@ -84,73 +80,103 @@
                     <Button
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         style="@style/Widget.AppCompat.Button"
                         android:background="@drawable/ic_notifications" />
 
                 </RelativeLayout>
-
-                <View
-                    android:layout_alignParentBottom="true"
-                    android:layout_width="match_parent"
-                    android:layout_height="0.1dp"
-                    android:background="#979494"/>
-
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/ket_sdg_pop"
-                android:layout_below="@+id/header"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+        </androidx.appcompat.widget.Toolbar>
 
-                <TextView
-                    android:layout_marginLeft="15dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sedang Populer"
-                    android:textStyle="bold"
-                    android:textSize="17sp"/>
 
-                <TextView
-                    android:layout_marginRight="15dp"
-                    android:layout_alignParentRight="true"
-                    android:id="@+id/btn_populer"
-                    android:background="?attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Selengkapnya >"/>
-            </RelativeLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_below="@id/toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <RelativeLayout
-                android:id="@+id/lay_carousel"
+                android:background="@color/blue_soft"
+                android:id="@+id/lay_iklan"
+                android:layout_marginTop="20dp"
                 android:layout_below="@+id/ket_sdg_pop"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_height="wrap_content">
 
-                <com.synnapps.carouselview.CarouselView
-                    android:id="@+id/carouselView"
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPagerSlide"
                     android:layout_width="match_parent"
-                    android:layout_height="170dp"
-                    app:fillColor="#000000"
-                    app:pageColor="#ffff"
-                    app:strokeColor="#fff"
-                    app:radius="3dp"
-                    app:slideInterval="4000"
-                    app:strokeWidth="1dp"
-                    app:animateOnBoundary="false"/>
+                    android:layout_height="180dp"/>
+
+                <RelativeLayout
+                    android:layout_below="@id/viewPagerSlide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                    <Button
+                        android:layout_width="90dp"
+                        android:text="SEMUA PROMO"
+                        android:textSize="7sp"
+                        android:layout_height="35dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"/>
+
+                    <LinearLayout
+                        android:id="@+id/SliderDots"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_centerVertical="true"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
 
             </RelativeLayout>
 
+
+            <View
+                android:layout_below="@+id/lay_iklan"
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="#777575"/>
+
             <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
                 android:layout_marginTop="20dp"
+                android:layout_height="match_parent"
+                android:elevation="10dp">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:foregroundGravity="center"
+                    android:id="@+id/viewPager"
+                    android:layout_centerInParent="true"
+                    android:overScrollMode="never"
+                    android:clipToPadding="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="290dp">
+                </androidx.viewpager.widget.ViewPager>
+
+                <View
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:background="#777575"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="18dp"
                 android:id="@+id/lay_location"
-                android:layout_below="@+id/lay_carousel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -171,33 +197,6 @@
                     android:textSize="17sp"/>
             </LinearLayout>
 
-            <LinearLayout
-                android:gravity="center"
-                android:orientation="vertical"
-                android:layout_below="@+id/lay_location"
-                android:layout_width="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_height="match_parent"
-                android:elevation="10dp">
-
-                <androidx.viewpager.widget.ViewPager
-                    android:foregroundGravity="center"
-                    android:id="@+id/viewPager"
-                    android:layout_centerInParent="true"
-                    android:overScrollMode="never"
-                    android:clipToPadding="false"
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp">
-                </androidx.viewpager.widget.ViewPager>
-
-                <View
-                    android:layout_marginTop="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="0.2dp"
-                    android:background="#777575"/>
-
-            </LinearLayout>
-
             <HorizontalScrollView
                 android:id="@+id/scrollView"
                 android:layout_width="fill_parent"
@@ -214,8 +213,8 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="220dp"
-                        android:layout_height="150dp"
+                        android:layout_width="190dp"
+                        android:layout_height="110dp"
                         android:layout_margin="10dp"
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
@@ -238,8 +237,33 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="220dp"
-                        android:layout_height="150dp"
+                        android:id="@+id/wisata_yogyakarta"
+                        android:layout_width="190dp"
+                        android:layout_height="110dp"
+                        android:layout_margin="10dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/blue"
+                        app:cardCornerRadius="15dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_gravity="bottom"
+                            android:gravity="center"
+                            android:text="YOGYAKARTA"
+                            android:textColor="#ffff"
+                            android:background="#66000000" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="190dp"
+                        android:layout_height="110dp"
                         android:layout_margin="10dp"
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
@@ -262,8 +286,8 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="220dp"
-                        android:layout_height="150dp"
+                        android:layout_width="190dp"
+                        android:layout_height="110dp"
                         android:layout_margin="10dp"
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
@@ -286,8 +310,8 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="220dp"
-                        android:layout_height="150dp"
+                        android:layout_width="190dp"
+                        android:layout_height="110dp"
                         android:layout_margin="10dp"
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
@@ -310,8 +334,8 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="220dp"
-                        android:layout_height="150dp"
+                        android:layout_width="190dp"
+                        android:layout_height="110dp"
                         android:layout_margin="10dp"
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
@@ -334,8 +358,8 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="220dp"
-                        android:layout_height="150dp"
+                        android:layout_width="190dp"
+                        android:layout_height="110dp"
                         android:layout_margin="10dp"
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
@@ -358,32 +382,8 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="220dp"
-                        android:layout_height="150dp"
-                        android:layout_margin="10dp"
-                        android:clickable="true"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        app:cardBackgroundColor="@color/blue"
-                        app:cardCornerRadius="15dp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scaleType="centerCrop"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="30dp"
-                            android:layout_gravity="bottom"
-                            android:gravity="center"
-                            android:text="SEMUA"
-                            android:textColor="#ffff"
-                            android:background="#66000000" />
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="220dp"
-                        android:layout_height="150dp"
+                        android:layout_width="190dp"
+                        android:layout_height="110dp"
                         android:layout_margin="10dp"
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"

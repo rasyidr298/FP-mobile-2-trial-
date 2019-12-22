@@ -14,9 +14,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.coswick.travelinktrial.R;
-import com.coswick.travelinktrial.adapters.UserAdapter;
+import com.coswick.travelinktrial.adapters.TicketAdapter;
 import com.coswick.travelinktrial.dao.ClienteDAO;
-import com.coswick.travelinktrial.model.ClientModel;
+import com.coswick.travelinktrial.model.TicketModel;
 import com.coswick.travelinktrial.util.Constants;
 
 import java.util.List;
@@ -25,8 +25,8 @@ public class FragmentMyTickets extends Fragment {
 
     private TextView txtMsg;
     private ListView listaClientes;
-    private UserAdapter adapter;
-    private List<ClientModel> clientModels;
+    private TicketAdapter adapter;
+    private List<TicketModel> ticketModels;
     private ClienteDAO dao = null;
     private int idCli, pos;
 
@@ -45,13 +45,13 @@ public class FragmentMyTickets extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                int idCliente = clientModels.get(position).getId();
-                String nome = clientModels.get(position).getNome();
-                int idade = clientModels.get(position).getIdade();
-                String email = clientModels.get(position).getEmail();
-                String comentario = clientModels.get(position).getComentario();
+                int idCliente = ticketModels.get(position).getId();
+                String nome = ticketModels.get(position).getNome();
+                int idade = ticketModels.get(position).getIdade();
+                String email = ticketModels.get(position).getEmail();
+                String comentario = ticketModels.get(position).getComentario();
 
-                Fragment fragment = new EditTicketsFragment();
+                Fragment fragment = new FragmentEditTickets();
                 fragment.setArguments(passParams(idCliente,  nome, idade, email, comentario));
                 FragmentManager fm = getFragmentManager();
                 fm.beginTransaction().replace(R.id.frame_layout, fragment).commit();
@@ -61,7 +61,7 @@ public class FragmentMyTickets extends Fragment {
         this.listaClientes.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                idCli = clientModels.get(position).getId();
+                idCli = ticketModels.get(position).getId();
                 pos = position;
                 confirmation();
                 return true;
@@ -71,10 +71,10 @@ public class FragmentMyTickets extends Fragment {
 
     private void loadData(View view){
         this.dao = new ClienteDAO(view.getContext());
-        clientModels = this.dao.getAll();
+        ticketModels = this.dao.getAll();
 
-        if(clientModels.size() > 0){
-            this.adapter = new UserAdapter(getContext(), clientModels);
+        if(ticketModels.size() > 0){
+            this.adapter = new TicketAdapter(getContext(), ticketModels);
             this.listaClientes.setAdapter(adapter);
         }else{
             this.txtMsg.setText(Constants.MSG_EMPTY_REGISTERS);
@@ -84,29 +84,29 @@ public class FragmentMyTickets extends Fragment {
     private Bundle passParams(int id, String nome, int idade, String email, String comentario){
         Bundle params = new Bundle();
         params.putString(Constants.LB_ID, String.valueOf(id));
-        params.putString(Constants.LB_NOME, nome);
-        params.putString(Constants.LB_IDADE, String.valueOf(idade));
-        params.putString(Constants.LB_EMAIL, email);
-        params.putString(Constants.LB_COMENTARIO, comentario);
+        params.putString(Constants.TXT_NAMA, nome);
+        params.putString(Constants.TXT_HARGA, String.valueOf(idade));
+        params.putString(Constants.TXT_EMAIL, email);
+        params.putString(Constants.TXT_KOMENTAR, comentario);
         return params;
     }
 
     private void confirmation(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
-        alertDialogBuilder.setTitle(Constants.TXT_ALERT_TITLE);
+        alertDialogBuilder.setTitle(Constants.TXT_ALERT);
         alertDialogBuilder.setIcon(R.drawable.ic_profile);
 
         alertDialogBuilder.setMessage(Constants.TXT_ALERT_MSG_DEL).setCancelable(false)
                 .setPositiveButton(Constants.TXT_ALERT_DEL_POSITIVE_BUTTON,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                ClientModel cli = dao.getById(idCli);
+                                TicketModel cli = dao.getById(idCli);
                                 dao.delete(cli);
-                                clientModels.remove(pos);
+                                ticketModels.remove(pos);
                                 adapter.notifyDataSetChanged();
                             }
                         })
-                .setNegativeButton(Constants.TXT_ALERT_NEGATIVE_BUTTON,
+                .setNegativeButton(Constants.TXT_BUTUN_NO,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();

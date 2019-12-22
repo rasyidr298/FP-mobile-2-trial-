@@ -9,8 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WisataPopuler"></activity>
-        <activity android:name=".BottomNav"></activity>
+        <activity android:name=".wisata_yogyakarta.WisataYogya"
+            android:theme="@style/WisataYogya">
+        </activity>
+        <activity android:name=".DetailWIsata" />
+        <activity android:name=".FormPembelian" />
+        <activity android:name=".BottomNav" />
         <activity android:name=".Register" />
         <activity android:name=".LogIn" />
         <activity android:name=".SplashScreen">

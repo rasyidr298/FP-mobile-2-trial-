@@ -13,5 +13,4 @@
         android:layout_height="50dp"
         android:src="@drawable/ic_logo"/>
 
-
 </RelativeLayout>

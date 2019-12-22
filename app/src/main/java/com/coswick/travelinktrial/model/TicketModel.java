@@ -9,7 +9,7 @@ import java.io.Serializable;
  * Created by Lucas Albuquerque on 09/03/2018.
  */
 @DatabaseTable(tableName = "cliente" )
-public class ClientModel implements Serializable {
+public class TicketModel implements Serializable {
 
     @DatabaseField(generatedId = true)
     private int id;
@@ -26,10 +26,10 @@ public class ClientModel implements Serializable {
     @DatabaseField
     private String comentario;
 
-    public ClientModel() {
+    public TicketModel() {
     }
 
-    public ClientModel(int id, String nome, int idade, String email, String comentario) {
+    public TicketModel(int id, String nome, int idade, String email, String comentario) {
         this.id = id;
         this.nome = nome;
         this.idade = idade;

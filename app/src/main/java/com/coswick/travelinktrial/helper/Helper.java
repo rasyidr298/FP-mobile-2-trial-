@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import com.coswick.travelinktrial.model.ClientModel;
+import com.coswick.travelinktrial.model.TicketModel;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
@@ -26,7 +26,7 @@ public class Helper<T> extends OrmLiteSqliteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase database, ConnectionSource connectionSource) {
         try{
-            TableUtils.createTable(connectionSource, ClientModel.class);
+            TableUtils.createTable(connectionSource, TicketModel.class);
         }catch (java.sql.SQLException e){
             Log.e(Helper.class.getName(), e.getMessage());
             throw new RuntimeException(e);

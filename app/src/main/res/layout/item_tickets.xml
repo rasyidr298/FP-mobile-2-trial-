@@ -21,7 +21,7 @@
             android:layout_marginLeft="8dp">
 
             <TextView
-                android:id="@+id/txt_cliente"
+                android:id="@+id/txt_nama_wisata"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="sgbdfsvbgs"
@@ -29,7 +29,7 @@
                 android:gravity="center_vertical"/>
 
             <TextView
-                android:id="@+id/txt_email"
+                android:id="@+id/txt_pemesan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="wefverf"

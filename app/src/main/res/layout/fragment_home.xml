@@ -78,6 +78,7 @@
                     </Button>
 
                     <Button
+                        android:id="@+id/btn_notif"
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:layout_width="20dp"
@@ -121,6 +122,7 @@
 
 
                     <Button
+                        android:id="@+id/btn_promo"
                         android:layout_width="90dp"
                         android:text="SEMUA PROMO"
                         android:textSize="7sp"
@@ -213,6 +215,7 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/semua_wisata"
                         android:layout_width="190dp"
                         android:layout_height="110dp"
                         android:layout_margin="10dp"
@@ -262,6 +265,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/wisata_bali"
                         android:layout_width="190dp"
                         android:layout_height="110dp"
                         android:layout_margin="10dp"
@@ -280,12 +284,13 @@
                             android:layout_height="30dp"
                             android:layout_gravity="bottom"
                             android:gravity="center"
-                            android:text="SEMUA"
+                            android:text="BALI"
                             android:textColor="#ffff"
                             android:background="#66000000" />
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/wisata_medan"
                         android:layout_width="190dp"
                         android:layout_height="110dp"
                         android:layout_margin="10dp"
@@ -304,12 +309,13 @@
                             android:layout_height="30dp"
                             android:layout_gravity="bottom"
                             android:gravity="center"
-                            android:text="SEMUA"
+                            android:text="MEDAN"
                             android:textColor="#ffff"
                             android:background="#66000000" />
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/wisata_aceh"
                         android:layout_width="190dp"
                         android:layout_height="110dp"
                         android:layout_margin="10dp"
@@ -328,12 +334,13 @@
                             android:layout_height="30dp"
                             android:layout_gravity="bottom"
                             android:gravity="center"
-                            android:text="SEMUA"
+                            android:text="ACEH"
                             android:textColor="#ffff"
                             android:background="#66000000" />
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/wisata_surabaya"
                         android:layout_width="190dp"
                         android:layout_height="110dp"
                         android:layout_margin="10dp"
@@ -352,12 +359,13 @@
                             android:layout_height="30dp"
                             android:layout_gravity="bottom"
                             android:gravity="center"
-                            android:text="SEMUA"
+                            android:text="SURABAYA"
                             android:textColor="#ffff"
                             android:background="#66000000" />
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/wisata_klaten"
                         android:layout_width="190dp"
                         android:layout_height="110dp"
                         android:layout_margin="10dp"
@@ -376,12 +384,13 @@
                             android:layout_height="30dp"
                             android:layout_gravity="bottom"
                             android:gravity="center"
-                            android:text="SEMUA"
+                            android:text="KLATEN"
                             android:textColor="#ffff"
                             android:background="#66000000" />
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/wisata_wonogiri"
                         android:layout_width="190dp"
                         android:layout_height="110dp"
                         android:layout_margin="10dp"
@@ -400,7 +409,7 @@
                             android:layout_height="30dp"
                             android:layout_gravity="bottom"
                             android:gravity="center"
-                            android:text="SEMUA"
+                            android:text="WONOGIRI"
                             android:textColor="#ffff"
                             android:background="#66000000" />
                     </androidx.cardview.widget.CardView>
@@ -408,6 +417,35 @@
                 </LinearLayout>
 
             </HorizontalScrollView>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer_view_container_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:shimmer_duration="800">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <include layout="@layout/item_shimmer"/>
+                        <include layout="@layout/item_shimmer"/>
+                        <include layout="@layout/item_shimmer"/>
+                    </LinearLayout>
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview_id_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </RelativeLayout>
 
         </LinearLayout>
 

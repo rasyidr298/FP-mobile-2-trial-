@@ -1,5 +1,4 @@
 package com.coswick.travelinktrial.adapters;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,11 +10,6 @@ import com.coswick.travelinktrial.R;
 import com.coswick.travelinktrial.model.TicketModel;
 
 import java.util.List;
-
-
-/**
- * Created by Lucas Albuquerque on 09/03/2018.
- */
 
 public class TicketAdapter extends BaseAdapter {
 

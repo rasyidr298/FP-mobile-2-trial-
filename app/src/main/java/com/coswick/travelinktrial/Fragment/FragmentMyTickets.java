@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import com.coswick.travelinktrial.R;
 import com.coswick.travelinktrial.adapters.TicketAdapter;
-import com.coswick.travelinktrial.dao.ClienteDAO;
+import com.coswick.travelinktrial.db_crud_ormite.ClienteDAO;
 import com.coswick.travelinktrial.model.TicketModel;
 import com.coswick.travelinktrial.util.Constants;
 
@@ -32,19 +32,18 @@ public class FragmentMyTickets extends Fragment {
 
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_my_tickets,container,false);
-
         initUi(view);
         return view;
-    } private void initUi(View view){
+    }
+
+    private void initUi(View view){
         this.txtMsg = (TextView) view.findViewById(R.id.txt_msg_empty);
         this.listaClientes = (ListView) view.findViewById(R.id.lista_clientes);
-
         loadData(view);
 
         this.listaClientes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                 int idCliente = ticketModels.get(position).getId();
                 String nome = ticketModels.get(position).getNome();
                 int idade = ticketModels.get(position).getIdade();

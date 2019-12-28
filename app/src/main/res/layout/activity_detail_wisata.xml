@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".DetailWIsata">
+    tools:context=".activity.DetailWIsata">
 
     <ImageView
         android:id="@+id/det_gambar"
@@ -40,6 +40,8 @@
 
         <TextView
             android:id="@+id/det_desc"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:linksClickable="true"
             android:layout_below="@+id/det_kategori"
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"

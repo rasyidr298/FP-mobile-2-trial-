@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".LogIn"
+    tools:context=".activity.LogIn"
     android:gravity="center"
     android:layout_gravity="center"
     android:background="@color/blue">
@@ -82,6 +82,7 @@
                             android:layout_marginTop="20dp">
 
                             <EditText
+                                android:id="@+id/edt_nama"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Email"
@@ -96,6 +97,7 @@
                             android:layout_marginTop="20dp">
 
                             <EditText
+                                android:id="@+id/edt_email"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Pasword"

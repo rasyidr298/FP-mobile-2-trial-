@@ -11,10 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
-import com.coswick.travelinktrial.DetailWIsata;
+import com.coswick.travelinktrial.activity.DetailWisataPopuler;
 import com.coswick.travelinktrial.model.PopulerModel;
 import com.coswick.travelinktrial.R;
-import com.coswick.travelinktrial.FormPembelian;
 
 import java.util.List;
 
@@ -29,7 +28,6 @@ public class PopulerAdapter extends PagerAdapter{
         this.context = context;
     }
 
-
     @Override
     public int getCount() {
         return populerModels.size();
@@ -43,6 +41,7 @@ public class PopulerAdapter extends PagerAdapter{
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, final int position) {
+
         layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.item_wisata_populer, container, false);
 
@@ -64,14 +63,13 @@ public class PopulerAdapter extends PagerAdapter{
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, DetailWIsata.class);
+                Intent intent = new Intent(context, DetailWisataPopuler.class);
                 intent.putExtra("img", populerModels.get(position).getImage());
                 intent.putExtra("title", populerModels.get(position).getTitle());
                 intent.putExtra("kat", populerModels.get(position).getKategori());
                 intent.putExtra("desc", populerModels.get(position).getDesc());
                 intent.putExtra("harga", populerModels.get(position).getHarga());
                 context.startActivity(intent);
-                // finish();
             }
         });
 

@@ -1,18 +1,12 @@
-package com.coswick.travelinktrial.dao;
+package com.coswick.travelinktrial.db_crud_ormite;
 
 import android.content.Context;
 import android.util.Log;
 
-import com.coswick.travelinktrial.helper.Helper;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
 
 import java.util.List;
-
-
-/**
- * Created by Lucas Albuquerque on 09/03/2018.
- */
 
 public abstract class GenericDAO<T> extends Helper<T> {
 

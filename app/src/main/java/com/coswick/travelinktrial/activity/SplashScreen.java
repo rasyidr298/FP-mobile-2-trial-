@@ -1,10 +1,12 @@
-package com.coswick.travelinktrial;
+package com.coswick.travelinktrial.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.coswick.travelinktrial.R;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -16,7 +18,7 @@ public class SplashScreen extends AppCompatActivity {
         new Handler() .postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreen.this,LogIn.class);
+                Intent intent = new Intent(SplashScreen.this, LogIn.class);
                 startActivity(intent);
                 finish();
 

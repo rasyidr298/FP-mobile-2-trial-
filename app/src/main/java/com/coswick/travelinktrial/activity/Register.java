@@ -1,10 +1,12 @@
-package com.coswick.travelinktrial;
+package com.coswick.travelinktrial.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.coswick.travelinktrial.R;
 
 public class Register extends AppCompatActivity {
 
@@ -13,7 +15,6 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
     }
-
     public void onLoginClick(View view) {
         startActivity(new Intent(this,LogIn.class));
     }

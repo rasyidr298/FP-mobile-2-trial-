@@ -4,13 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    tools:context=".SplashScreen"
+    tools:context=".activity.SplashScreen"
     android:background="@color/blue">
 
     <ImageView
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:src="@drawable/ic_logo"/>
+    <ProgressBar
 
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:fadeScrollbars="true"
+        android:layout_marginBottom="20dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"/>
 </RelativeLayout>

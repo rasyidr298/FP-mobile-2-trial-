@@ -1,4 +1,4 @@
-package com.coswick.travelinktrial;
+package com.coswick.travelinktrial.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import com.coswick.travelinktrial.dao.ClienteDAO;
+
+import com.coswick.travelinktrial.R;
+import com.coswick.travelinktrial.db_crud_ormite.ClienteDAO;
 import com.coswick.travelinktrial.model.TicketModel;
 import com.coswick.travelinktrial.util.Constants;
 
@@ -73,7 +75,7 @@ public class FormPembelian extends AppCompatActivity implements View.OnClickList
         if(status){
             configComponents();
             Toast.makeText(FormPembelian.this, "Pemesanan Berhasil", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this,BottomNav.class));
+            startActivity(new Intent(this, BottomNav.class));
         }
     }
 }

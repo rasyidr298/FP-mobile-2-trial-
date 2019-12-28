@@ -12,10 +12,10 @@ import androidx.viewpager.widget.ViewPager;
 import com.coswick.travelinktrial.R;
 
 public class ImageSlideAdapter extends PagerAdapter {
+
     private Context context;
     private LayoutInflater layoutInflater;
     private Integer [] images = {R.drawable.image_1, R.drawable.image_2,R.drawable.image_3};
-
     public ImageSlideAdapter(Context context) {
         this.context = context;
     }
@@ -37,12 +37,10 @@ public class ImageSlideAdapter extends PagerAdapter {
         View view = layoutInflater.inflate(R.layout.itemslideimage, null);
         ImageView imageView = (ImageView) view.findViewById(R.id.imageViewslide);
         imageView.setImageResource(images[position]);
-
-
         ViewPager vp = (ViewPager) container;
         vp.addView(view, 0);
-        return view;
 
+        return view;
     }
 
     @Override

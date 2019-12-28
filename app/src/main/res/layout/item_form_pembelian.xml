@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FormPembelian"
+    tools:context=".activity.FormPembelian"
     android:focusableInTouchMode="true"
     tools:showIn="@layout/activity_form_pembelian"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">

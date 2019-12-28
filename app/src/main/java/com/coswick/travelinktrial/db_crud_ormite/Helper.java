@@ -1,4 +1,4 @@
-package com.coswick.travelinktrial.helper;
+package com.coswick.travelinktrial.db_crud_ormite;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,11 +8,6 @@ import com.coswick.travelinktrial.model.TicketModel;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
-
-
-/**
- * Created by Lucas Albuquerque on 09/03/2018.
- */
 
 public class Helper<T> extends OrmLiteSqliteOpenHelper {
 

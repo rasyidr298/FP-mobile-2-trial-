@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.coswick.travelinktrial">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,18 +11,51 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".wisata_yogyakarta.WisataYogya"
-            android:theme="@style/WisataYogya">
-        </activity>
-        <activity android:name=".DetailWIsata" />
-        <activity android:name=".FormPembelian" />
-        <activity android:name=".BottomNav" />
-        <activity android:name=".Register" />
-        <activity android:name=".LogIn" />
-        <activity android:name=".SplashScreen">
+
+        <activity android:name=".activity.Promo"/>
+
+        <activity android:name=".activity.Notifikasi" />
+
+        <activity android:name=".wisata.WisataWonogiri"
+            android:theme="@style/WisataYogya" />
+
+        <activity android:name=".wisata.WisataSurabaya"
+            android:theme="@style/WisataYogya" />
+
+        <activity android:name=".wisata.WisataMedan"
+            android:theme="@style/WisataYogya" />
+
+        <activity android:name=".wisata.WisataBali"
+            android:theme="@style/WisataYogya" />
+
+        <activity android:name=".wisata.WisataAceh"
+            android:theme="@style/WisataYogya" />
+
+        <activity android:name=".wisata.WisataKlaten"
+            android:theme="@style/WisataYogya" />
+
+        <activity android:name=".wisata.WisataSemua"
+            android:theme="@style/WisataYogya" />
+
+        <activity
+            android:name=".wisata.WisataYogya"
+            android:theme="@style/WisataYogya" />
+
+        <activity android:name=".activity.DetailWisataPopuler" />
+
+        <activity android:name=".activity.DetailWIsata" />
+
+        <activity android:name=".activity.FormPembelian" />
+
+        <activity android:name=".activity.BottomNav" />
+
+        <activity android:name=".activity.Register" />
+
+        <activity android:name=".activity.LogIn" />
+
+        <activity android:name=".activity.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

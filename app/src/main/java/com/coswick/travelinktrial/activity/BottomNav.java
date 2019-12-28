@@ -1,4 +1,4 @@
-package com.coswick.travelinktrial;
+package com.coswick.travelinktrial.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -11,9 +11,11 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.coswick.travelinktrial.Fragment.FragmentFavorite;
 import com.coswick.travelinktrial.Fragment.FragmentHome;
 import com.coswick.travelinktrial.Fragment.FragmentMyTickets;
 import com.coswick.travelinktrial.Fragment.FragmentProfile;
+import com.coswick.travelinktrial.R;
 import com.coswick.travelinktrial.util.Constants;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -57,6 +59,9 @@ public class BottomNav extends AppCompatActivity  implements BottomNavigationVie
                 break;
             case R.id.profile_menu:
                 fragment = new FragmentProfile();
+                break;
+            case R.id.favorite_menu:
+                fragment = new FragmentFavorite();
                 break;
 
         }

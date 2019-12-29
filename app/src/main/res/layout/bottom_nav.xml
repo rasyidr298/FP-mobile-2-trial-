@@ -16,8 +16,9 @@
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         app:menu="@menu/menu_bottom_nav"
-        app:tabMode="fixed"
-        app:tabGravity="fill">
+        app:labelVisibilityMode="labeled"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView">
         <View
             android:layout_width="match_parent"
             android:layout_height="0.1dp"

@@ -21,8 +21,8 @@
         android:layout_margin="8dp">
 
             <RelativeLayout
-                android:layout_width="170dp"
-                android:layout_height="240dp">
+                android:layout_width="150dp"
+                android:layout_height="220dp">
 
                 <ImageView
                     android:id="@+id/image"
@@ -73,7 +73,7 @@
         android:layout_marginTop="2dp"
         android:text="CANDI PRAMBANAN"
         android:textStyle="bold"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

@@ -17,29 +17,29 @@
         <activity android:name=".activity.Notifikasi" />
 
         <activity android:name=".wisata.WisataWonogiri"
-            android:theme="@style/WisataYogya" />
+            android:theme="@style/Wisata" />
 
         <activity android:name=".wisata.WisataSurabaya"
-            android:theme="@style/WisataYogya" />
+            android:theme="@style/Wisata" />
 
         <activity android:name=".wisata.WisataMedan"
-            android:theme="@style/WisataYogya" />
+            android:theme="@style/Wisata" />
 
         <activity android:name=".wisata.WisataBali"
-            android:theme="@style/WisataYogya" />
+            android:theme="@style/Wisata" />
 
         <activity android:name=".wisata.WisataAceh"
-            android:theme="@style/WisataYogya" />
+            android:theme="@style/Wisata" />
 
         <activity android:name=".wisata.WisataKlaten"
-            android:theme="@style/WisataYogya" />
+            android:theme="@style/Wisata" />
 
         <activity android:name=".wisata.WisataSemua"
-            android:theme="@style/WisataYogya" />
+            android:theme="@style/Wisata" />
 
         <activity
             android:name=".wisata.WisataYogya"
-            android:theme="@style/WisataYogya" />
+            android:theme="@style/Wisata" />
 
         <activity android:name=".activity.DetailWisataPopuler" />
 
@@ -47,7 +47,8 @@
 
         <activity android:name=".activity.FormPembelian" />
 
-        <activity android:name=".activity.BottomNav" />
+        <activity android:name=".activity.BottomNav"
+            android:theme="@style/Wisata"/>
 
         <activity android:name=".activity.Register" />
 

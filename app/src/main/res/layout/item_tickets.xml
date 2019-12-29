@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -35,6 +36,22 @@
                 android:text="wefverf"
                 android:textStyle="italic"/>
         </LinearLayout>
+
+        <com.vipulasri.ticketview.TicketView
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/ticketView"
+            app:ticketOrientation="vertical"
+            app:ticketElevation="12dp"
+            app:ticketScallopRadius="10dp"
+            app:ticketDividerPadding="0dp"
+            app:ticketShowBorder="false"
+            app:ticketScallopPositionPercent="50"
+            app:ticketShowDivider="true"
+            app:ticketDividerType="dash"/>
     </androidx.cardview.widget.CardView>
 
     <TextView
@@ -46,4 +63,5 @@
         android:layout_alignParentRight="true"
         android:text="details"
         android:gravity="center_vertical"/>
+
 </RelativeLayout>

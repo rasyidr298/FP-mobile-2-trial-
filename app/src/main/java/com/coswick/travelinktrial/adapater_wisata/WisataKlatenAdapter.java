@@ -1,4 +1,4 @@
-package com.coswick.travelinktrial.adapters;
+package com.coswick.travelinktrial.adapater_wisata;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,21 +17,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.coswick.travelinktrial.R;
 import com.coswick.travelinktrial.activity.DetailWIsata;
 import com.coswick.travelinktrial.model.FavoriteModel;
-import com.coswick.travelinktrial.model.WisataTerahirModel;
-import com.coswick.travelinktrial.Fragment.FragmentHome;
+import com.coswick.travelinktrial.model.WisataKlatenModel;
+import com.coswick.travelinktrial.wisata.WisataKlaten;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class WisataTerahirAdapter extends RecyclerView.Adapter<WisataTerahirAdapter.ViewHolder> implements Filterable {
+public class WisataKlatenAdapter extends RecyclerView.Adapter<WisataKlatenAdapter.ViewHolder> implements Filterable {
 
-    List<WisataTerahirModel> wisataterahirModels;
+    List<WisataKlatenModel> wisataKlatenModels;
     Context ct;
-    private List<WisataTerahirModel> exampleListFull;
+    private List<WisataKlatenModel> exampleListFull;
 
-    public WisataTerahirAdapter(List<WisataTerahirModel> product_models, Context ct) {
-        this.wisataterahirModels = product_models;
+    public WisataKlatenAdapter(List<WisataKlatenModel> product_models, Context ct) {
+        this.wisataKlatenModels = product_models;
         this.ct = ct;
         exampleListFull = new ArrayList<>(product_models);
     }
@@ -45,24 +45,24 @@ public class WisataTerahirAdapter extends RecyclerView.Adapter<WisataTerahirAdap
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
-        final WisataTerahirModel productList= wisataterahirModels.get(i);
+        final WisataKlatenModel productList= wisataKlatenModels.get(i);
         String pimg=productList.getImage();
 
-        viewHolder.tv_nama.setText(wisataterahirModels.get(i).getTitle());
-        viewHolder.tv_kat.setText(wisataterahirModels.get(i).getKategori());
-        viewHolder.tv_desc.setText(wisataterahirModels.get(i).getDesc());
-        viewHolder.tv_harga.setText(wisataterahirModels.get(i).getHarga());
-        Picasso.with(ct).load(wisataterahirModels.get(i).getImage());
+        viewHolder.tv_nama.setText(wisataKlatenModels.get(i).getTitle());
+        viewHolder.tv_kat.setText(wisataKlatenModels.get(i).getKategori());
+        viewHolder.tv_desc.setText(wisataKlatenModels.get(i).getDesc());
+        viewHolder.tv_harga.setText(wisataKlatenModels.get(i).getHarga());
+        Picasso.with(ct).load(wisataKlatenModels.get(i).getImage());
         viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ct, DetailWIsata.class);
                 //passing data to the book activity
-                intent.putExtra("title", wisataterahirModels.get(i).getTitle());
-                intent.putExtra("img", wisataterahirModels.get(i).getImage());
-                intent.putExtra("kat", wisataterahirModels.get(i).getKategori());
-                intent.putExtra("desc", wisataterahirModels.get(i).getDesc());
-                intent.putExtra("harga", wisataterahirModels.get(i).getHarga());
+                intent.putExtra("title", wisataKlatenModels.get(i).getTitle());
+                intent.putExtra("img", wisataKlatenModels.get(i).getImage());
+                intent.putExtra("kat", wisataKlatenModels.get(i).getKategori());
+                intent.putExtra("desc", wisataKlatenModels.get(i).getDesc());
+                intent.putExtra("harga", wisataKlatenModels.get(i).getHarga());
 
                 //start the activity
                 ct.startActivity(intent);
@@ -75,7 +75,7 @@ public class WisataTerahirAdapter extends RecyclerView.Adapter<WisataTerahirAdap
         viewHolder.tv_kat.setText(productList.getKategori());
         viewHolder.tv_harga.setText(productList.getHarga());
 
-        if (FragmentHome.favoriteDatabase_terahir.favoriteDao().isFavorite(productList.getId())==1)
+        if (WisataKlaten.favoriteDatabase_klaten.favoriteDao().isFavorite(productList.getId())==1)
             viewHolder.fav_btn.setImageResource(R.drawable.ic_favorite);
         else
             viewHolder.fav_btn.setImageResource(R.drawable.ic_favorite_border_black_24dp);
@@ -101,13 +101,13 @@ public class WisataTerahirAdapter extends RecyclerView.Adapter<WisataTerahirAdap
                 favoriteModel.setDeskripsi(deskripsi);
                 favoriteModel.setHarga(harga);
 
-                if (FragmentHome.favoriteDatabase_terahir.favoriteDao().isFavorite(id)!=1){
+                if (WisataKlaten.favoriteDatabase_klaten.favoriteDao().isFavorite(id)!=1){
                     viewHolder.fav_btn.setImageResource(R.drawable.ic_favorite);
-                    FragmentHome.favoriteDatabase_terahir.favoriteDao().addData(favoriteModel);
+                    WisataKlaten.favoriteDatabase_klaten.favoriteDao().addData(favoriteModel);
 
                 }else {
                     viewHolder.fav_btn.setImageResource(R.drawable.ic_favorite_border_black_24dp);
-                    FragmentHome.favoriteDatabase_terahir.favoriteDao().delete(favoriteModel);
+                    WisataKlaten.favoriteDatabase_klaten.favoriteDao().delete(favoriteModel);
 
                 }
 
@@ -118,7 +118,7 @@ public class WisataTerahirAdapter extends RecyclerView.Adapter<WisataTerahirAdap
 
     @Override
     public int getItemCount() {
-        return wisataterahirModels.size();
+        return wisataKlatenModels.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -147,14 +147,14 @@ public class WisataTerahirAdapter extends RecyclerView.Adapter<WisataTerahirAdap
     private Filter exampleFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
-            List<WisataTerahirModel> filteredList = new ArrayList<>();
+            List<WisataKlatenModel> filteredList = new ArrayList<>();
 
             if (constraint == null || constraint.length() == 0) {
                 filteredList.addAll(exampleListFull);
             } else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
 
-                for (WisataTerahirModel item : exampleListFull) {
+                for (WisataKlatenModel item : exampleListFull) {
                     if (item.getTitle().toLowerCase().contains(filterPattern)) {
                         filteredList.add(item);
                     }
@@ -169,8 +169,8 @@ public class WisataTerahirAdapter extends RecyclerView.Adapter<WisataTerahirAdap
 
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
-            wisataterahirModels.clear();
-            wisataterahirModels.addAll((List) results.values);
+            wisataKlatenModels.clear();
+            wisataKlatenModels.addAll((List) results.values);
             notifyDataSetChanged();
         }
     };

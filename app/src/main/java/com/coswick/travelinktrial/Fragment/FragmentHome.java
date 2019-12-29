@@ -27,9 +27,9 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.coswick.travelinktrial.activity.Notifikasi;
 import com.coswick.travelinktrial.activity.Promo;
-import com.coswick.travelinktrial.adapters.ImageSlideAdapter;
+import com.coswick.travelinktrial.adapter_image_slide.ImageSlideHomeAdapter;
 import com.coswick.travelinktrial.adapters.PopulerAdapter;
-import com.coswick.travelinktrial.adapters.WisataTerahirAdapter;
+import com.coswick.travelinktrial.adapater_wisata.WisataTerahirAdapter;
 import com.coswick.travelinktrial.db_favorite_room.FavoriteDatabase;
 import com.coswick.travelinktrial.model.PopulerModel;
 import com.coswick.travelinktrial.R;
@@ -65,15 +65,15 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
     public static FavoriteDatabase favoriteDatabase_terahir;
 
     //Deklarasi variable untuk SlideZoomViewPager
-    private ViewPager viewPager;
     private PopulerAdapter populerAdapter;
-    private ImageSlideAdapter slideAdapter;
     private List<PopulerModel> populerModels;
     private Integer[] colors = null;
     private ArgbEvaluator argbEvaluator = new ArgbEvaluator();
 
     //Deklarasi variable untuk Image SlideViewpager
     LinearLayout sliderDotspanel;
+    private ViewPager viewPager;
+    private ImageSlideHomeAdapter slideAdapter;
     private int dotscount;
     private ImageView[] dots;
 
@@ -181,6 +181,7 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
 
         //Button Klik notifikasi
         notifikasi = view.findViewById(R.id.btn_notif);
+        notifikasi = view.findViewById(R.id.btn_notiff);
         notifikasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -190,7 +191,7 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
         });
 
 
-        //Button Klik notifikasi
+        //Button Klik promo
         promo = view.findViewById(R.id.btn_promo);
         promo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -203,7 +204,7 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
 
 
         //Deklarasi variable untuk SlideZoomViewPager dan Image Slide
-        slideAdapter = new ImageSlideAdapter(getContext());
+        slideAdapter = new ImageSlideHomeAdapter(getContext());
         viewPager = view.findViewById(R.id.viewPagerSlide);
         sliderDotspanel = view.findViewById(R.id.SliderDots);
         viewPager.setAdapter(slideAdapter);
@@ -246,18 +247,34 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
         populerModels.add(new PopulerModel(R.drawable.sticker, "Candi Prambanan", "Sticker is a type of label: a piece of printed paper, plastic, vinyl, or other material with pressure sensitive adhesive on one side","Rp.40000","Yogyakarta"));
         populerModels.add(new PopulerModel(R.drawable.poster, "Candi Prambanan", "Poster is any piece of printed paper designed to be attached to a wall or vertical surface.","Rp.40000","Yogyakarta"));
         populerModels.add(new PopulerModel(R.drawable.namecard, "Candi Prambanan", "Business cards are cards bearing business information about a company or individual.","Rp.40000","Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.brochure, "Candi Prambanan", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","Rp.40000","Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.sticker, "Candi Prambanan", "Sticker is a type of label: a piece of printed paper, plastic, vinyl, or other material with pressure sensitive adhesive on one side","Rp.40000","Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.poster, "Candi Prambanan", "Poster is any piece of printed paper designed to be attached to a wall or vertical surface.","Rp.40000","Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.namecard, "Candi Prambanan", "Business cards are cards bearing business information about a company or individual.","Rp.40000","Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.brochure, "Candi Prambanan", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","Rp.40000","Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.sticker, "Candi Prambanan", "Sticker is a type of label: a piece of printed paper, plastic, vinyl, or other material with pressure sensitive adhesive on one side","Rp.40000","Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.poster, "Candi Prambanan", "Poster is any piece of printed paper designed to be attached to a wall or vertical surface.","Rp.40000","Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.namecard, "Candi Prambanan", "Business cards are cards bearing business information about a company or individual.","Rp.40000","Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.brochure, "Candi Prambanan", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","Rp.40000","Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.sticker, "Candi Prambanan", "Sticker is a type of label: a piece of printed paper, plastic, vinyl, or other material with pressure sensitive adhesive on one side","Rp.40000","Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.poster, "Candi Prambanan", "Poster is any piece of printed paper designed to be attached to a wall or vertical surface.","Rp.40000","Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.namecard, "Candi Prambanan", "Business cards are cards bearing business information about a company or individual.","Rp.40000","Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.brochure, "Candi Prambanan", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","Rp.40000","Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.sticker, "Candi Prambanan", "Sticker is a type of label: a piece of printed paper, plastic, vinyl, or other material with pressure sensitive adhesive on one side","Rp.40000","Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.poster, "Candi Prambanan", "Poster is any piece of printed paper designed to be attached to a wall or vertical surface.","Rp.40000","Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.namecard, "Candi Prambanan", "Business cards are cards bearing business information about a company or individual.","Rp.40000","Yogyakarta"));
         populerAdapter = new PopulerAdapter(getActivity(), populerModels);
         viewPager = view.findViewById(R.id.viewPager);
         viewPager.setAdapter(populerAdapter);
-        viewPager.setPadding(250, 0, 250, 0);
+        viewPager.setPadding(280, 0, 280, 0);
 
 
         //Merubah Warna setiap SlideZoomViewPager
         Integer[] colors_temp = {
-                getResources().getColor(R.color.blue),
-                getResources().getColor(R.color.blue_soft),
-                getResources().getColor(R.color.blue),
-                getResources().getColor(R.color.blue_soft)
+                getResources().getColor(R.color.color1),
+                getResources().getColor(R.color.color2),
+                getResources().getColor(R.color.color2),
+                getResources().getColor(R.color.color2)
         };
 
         //Merubah Warna SlideZoomViewPager

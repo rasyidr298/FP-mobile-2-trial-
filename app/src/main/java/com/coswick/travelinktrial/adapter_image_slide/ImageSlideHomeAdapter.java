@@ -1,4 +1,4 @@
-package com.coswick.travelinktrial.adapters;
+package com.coswick.travelinktrial.adapter_image_slide;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,12 +11,12 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.coswick.travelinktrial.R;
 
-public class ImageSlideAdapter extends PagerAdapter {
+public class ImageSlideHomeAdapter extends PagerAdapter {
 
     private Context context;
     private LayoutInflater layoutInflater;
-    private Integer [] images = {R.drawable.image_1, R.drawable.image_2,R.drawable.image_3};
-    public ImageSlideAdapter(Context context) {
+    private Integer [] images = {R.drawable.ban1, R.drawable.ban2,R.drawable.ban3,R.drawable.ban4, R.drawable.ban5,R.drawable.ban6};
+    public ImageSlideHomeAdapter(Context context) {
         this.context = context;
     }
 

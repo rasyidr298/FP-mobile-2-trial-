@@ -1,4 +1,4 @@
-package com.coswick.travelinktrial.adapters;
+package com.coswick.travelinktrial.adapater_wisata;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,21 +17,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.coswick.travelinktrial.R;
 import com.coswick.travelinktrial.activity.DetailWIsata;
 import com.coswick.travelinktrial.model.FavoriteModel;
-import com.coswick.travelinktrial.model.WisataBaliModel;
-import com.coswick.travelinktrial.wisata.WisataBali;
+import com.coswick.travelinktrial.model.WisataSemuaModel;
+import com.coswick.travelinktrial.wisata.WisataSemua;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class WisataBaliAdapter extends RecyclerView.Adapter<WisataBaliAdapter.ViewHolder> implements Filterable {
+public class WisataSemuaAdapter extends RecyclerView.Adapter<WisataSemuaAdapter.ViewHolder> implements Filterable {
 
-    List<WisataBaliModel> wisataBaliModels;
+    List<WisataSemuaModel> wisataSemuaModels;
     Context ct;
-    private List<WisataBaliModel> exampleListFull;
+    private List<WisataSemuaModel> exampleListFull;
 
-    public WisataBaliAdapter(List<WisataBaliModel> product_models, Context ct) {
-        this.wisataBaliModels = product_models;
+    public WisataSemuaAdapter(List<WisataSemuaModel> product_models, Context ct) {
+        this.wisataSemuaModels = product_models;
         this.ct = ct;
         exampleListFull = new ArrayList<>(product_models);
     }
@@ -45,24 +45,24 @@ public class WisataBaliAdapter extends RecyclerView.Adapter<WisataBaliAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
-        final WisataBaliModel productList= wisataBaliModels.get(i);
+        final WisataSemuaModel productList= wisataSemuaModels.get(i);
         String pimg=productList.getImage();
 
-        viewHolder.tv_nama.setText(wisataBaliModels.get(i).getTitle());
-        viewHolder.tv_kat.setText(wisataBaliModels.get(i).getKategori());
-        viewHolder.tv_desc.setText(wisataBaliModels.get(i).getDesc());
-        viewHolder.tv_harga.setText(wisataBaliModels.get(i).getHarga());
-        Picasso.with(ct).load(wisataBaliModels.get(i).getImage());
+        viewHolder.tv_nama.setText(wisataSemuaModels.get(i).getTitle());
+        viewHolder.tv_kat.setText(wisataSemuaModels.get(i).getKategori());
+        viewHolder.tv_desc.setText(wisataSemuaModels.get(i).getDesc());
+        viewHolder.tv_harga.setText(wisataSemuaModels.get(i).getHarga());
+        Picasso.with(ct).load(wisataSemuaModels.get(i).getImage());
         viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ct, DetailWIsata.class);
                 //passing data to the book activity
-                intent.putExtra("title", wisataBaliModels.get(i).getTitle());
-                intent.putExtra("img", wisataBaliModels.get(i).getImage());
-                intent.putExtra("kat", wisataBaliModels.get(i).getKategori());
-                intent.putExtra("desc", wisataBaliModels.get(i).getDesc());
-                intent.putExtra("harga", wisataBaliModels.get(i).getHarga());
+                intent.putExtra("title", wisataSemuaModels.get(i).getTitle());
+                intent.putExtra("img", wisataSemuaModels.get(i).getImage());
+                intent.putExtra("kat", wisataSemuaModels.get(i).getKategori());
+                intent.putExtra("desc", wisataSemuaModels.get(i).getDesc());
+                intent.putExtra("harga", wisataSemuaModels.get(i).getHarga());
 
                 //start the activity
                 ct.startActivity(intent);
@@ -75,7 +75,7 @@ public class WisataBaliAdapter extends RecyclerView.Adapter<WisataBaliAdapter.Vi
         viewHolder.tv_kat.setText(productList.getKategori());
         viewHolder.tv_harga.setText(productList.getHarga());
 
-        if (WisataBali.favoriteDatabase_bali.favoriteDao().isFavorite(productList.getId())==1)
+        if (WisataSemua.favoriteDatabase_semua.favoriteDao().isFavorite(productList.getId())==1)
             viewHolder.fav_btn.setImageResource(R.drawable.ic_favorite);
         else
             viewHolder.fav_btn.setImageResource(R.drawable.ic_favorite_border_black_24dp);
@@ -101,13 +101,13 @@ public class WisataBaliAdapter extends RecyclerView.Adapter<WisataBaliAdapter.Vi
                 favoriteModel.setDeskripsi(deskripsi);
                 favoriteModel.setHarga(harga);
 
-                if (WisataBali.favoriteDatabase_bali.favoriteDao().isFavorite(id)!=1){
+                if (WisataSemua.favoriteDatabase_semua.favoriteDao().isFavorite(id)!=1){
                     viewHolder.fav_btn.setImageResource(R.drawable.ic_favorite);
-                    WisataBali.favoriteDatabase_bali.favoriteDao().addData(favoriteModel);
+                    WisataSemua.favoriteDatabase_semua.favoriteDao().addData(favoriteModel);
 
                 }else {
                     viewHolder.fav_btn.setImageResource(R.drawable.ic_favorite_border_black_24dp);
-                    WisataBali.favoriteDatabase_bali.favoriteDao().delete(favoriteModel);
+                    WisataSemua.favoriteDatabase_semua.favoriteDao().delete(favoriteModel);
 
                 }
 
@@ -118,7 +118,7 @@ public class WisataBaliAdapter extends RecyclerView.Adapter<WisataBaliAdapter.Vi
 
     @Override
     public int getItemCount() {
-        return wisataBaliModels.size();
+        return wisataSemuaModels.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -147,14 +147,14 @@ public class WisataBaliAdapter extends RecyclerView.Adapter<WisataBaliAdapter.Vi
     private Filter exampleFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
-            List<WisataBaliModel> filteredList = new ArrayList<>();
+            List<WisataSemuaModel> filteredList = new ArrayList<>();
 
             if (constraint == null || constraint.length() == 0) {
                 filteredList.addAll(exampleListFull);
             } else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
 
-                for (WisataBaliModel item : exampleListFull) {
+                for (WisataSemuaModel item : exampleListFull) {
                     if (item.getTitle().toLowerCase().contains(filterPattern)) {
                         filteredList.add(item);
                     }
@@ -169,8 +169,8 @@ public class WisataBaliAdapter extends RecyclerView.Adapter<WisataBaliAdapter.Vi
 
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
-            wisataBaliModels.clear();
-            wisataBaliModels.addAll((List) results.values);
+            wisataSemuaModels.clear();
+            wisataSemuaModels.addAll((List) results.values);
             notifyDataSetChanged();
         }
     };

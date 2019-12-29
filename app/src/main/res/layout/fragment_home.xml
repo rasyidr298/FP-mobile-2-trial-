@@ -8,7 +8,7 @@
     android:background="#FFFF">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbar_home"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:background="@color/blue"
@@ -69,6 +69,7 @@
                     android:gravity="center">
 
                     <Button
+                        android:id="@+id/btn_notiff"
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:layout_width="35dp"
@@ -93,9 +94,10 @@
 
 
     <androidx.core.widget.NestedScrollView
-        android:layout_below="@id/toolbar"
+        android:layout_below="@id/toolbar_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
 
         <LinearLayout
             android:orientation="vertical"
@@ -105,7 +107,6 @@
             <RelativeLayout
                 android:background="@color/blue_soft"
                 android:id="@+id/lay_iklan"
-                android:layout_marginTop="20dp"
                 android:layout_below="@+id/ket_sdg_pop"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -113,20 +114,24 @@
                 <androidx.viewpager.widget.ViewPager
                     android:id="@+id/viewPagerSlide"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"/>
+                    android:layout_height="200dp"/>
 
                 <RelativeLayout
                     android:layout_below="@id/viewPagerSlide"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp">
 
 
                     <Button
                         android:id="@+id/btn_promo"
-                        android:layout_width="90dp"
+                        android:background="@color/blue"
+                        android:layout_width="80dp"
+                        android:textColor="#fffd"
                         android:text="SEMUA PROMO"
-                        android:textSize="7sp"
-                        android:layout_height="35dp"
+                        android:textSize="8sp"
+                        android:layout_height="25dp"
                         android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="10dp"/>
@@ -146,15 +151,37 @@
 
             <View
                 android:layout_below="@+id/lay_iklan"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="0.2dp"
                 android:background="#777575"/>
 
             <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_favorite"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  Trending"
+                    android:textStyle="bold"
+                    android:textSize="17sp"/>
+            </LinearLayout>
+
+            <LinearLayout
                 android:gravity="center"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_marginTop="20dp"
                 android:layout_height="match_parent"
                 android:elevation="10dp">
 
@@ -165,7 +192,7 @@
                     android:overScrollMode="never"
                     android:clipToPadding="false"
                     android:layout_width="match_parent"
-                    android:layout_height="290dp">
+                    android:layout_height="270dp">
                 </androidx.viewpager.widget.ViewPager>
 
                 <View
@@ -218,7 +245,7 @@
                         android:id="@+id/semua_wisata"
                         android:layout_width="190dp"
                         android:layout_height="110dp"
-                        android:layout_margin="10dp"
+                        android:layout_margin="5dp"
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         app:cardBackgroundColor="@color/blue"
@@ -243,7 +270,7 @@
                         android:id="@+id/wisata_yogyakarta"
                         android:layout_width="190dp"
                         android:layout_height="110dp"
-                        android:layout_margin="10dp"
+                        android:layout_margin="5dp"
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         app:cardBackgroundColor="@color/blue"
@@ -268,7 +295,7 @@
                         android:id="@+id/wisata_bali"
                         android:layout_width="190dp"
                         android:layout_height="110dp"
-                        android:layout_margin="10dp"
+                        android:layout_margin="5dp"
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         app:cardBackgroundColor="@color/blue"
@@ -293,7 +320,7 @@
                         android:id="@+id/wisata_medan"
                         android:layout_width="190dp"
                         android:layout_height="110dp"
-                        android:layout_margin="10dp"
+                        android:layout_margin="5dp"
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         app:cardBackgroundColor="@color/blue"
@@ -318,7 +345,7 @@
                         android:id="@+id/wisata_aceh"
                         android:layout_width="190dp"
                         android:layout_height="110dp"
-                        android:layout_margin="10dp"
+                        android:layout_margin="5dp"
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         app:cardBackgroundColor="@color/blue"
@@ -343,7 +370,7 @@
                         android:id="@+id/wisata_surabaya"
                         android:layout_width="190dp"
                         android:layout_height="110dp"
-                        android:layout_margin="10dp"
+                        android:layout_margin="5dp"
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         app:cardBackgroundColor="@color/blue"
@@ -368,7 +395,7 @@
                         android:id="@+id/wisata_klaten"
                         android:layout_width="190dp"
                         android:layout_height="110dp"
-                        android:layout_margin="10dp"
+                        android:layout_margin="5dp"
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         app:cardBackgroundColor="@color/blue"
@@ -393,7 +420,7 @@
                         android:id="@+id/wisata_wonogiri"
                         android:layout_width="190dp"
                         android:layout_height="110dp"
-                        android:layout_margin="10dp"
+                        android:layout_margin="5dp"
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         app:cardBackgroundColor="@color/blue"
@@ -418,10 +445,40 @@
 
             </HorizontalScrollView>
 
+
+            <View
+                android:layout_below="@+id/lay_iklan"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="#777575"/>
+
+            <LinearLayout
+                android:layout_marginTop="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_favorite"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  Terahir Dilihat"
+                    android:textStyle="bold"
+                    android:textSize="17sp"/>
+            </LinearLayout>
+
             <RelativeLayout
+                android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
-
 
                 <com.facebook.shimmer.ShimmerFrameLayout
                     android:id="@+id/shimmer_view_container_home"
@@ -433,6 +490,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+                        <include layout="@layout/item_shimmer"/>
                         <include layout="@layout/item_shimmer"/>
                         <include layout="@layout/item_shimmer"/>
                         <include layout="@layout/item_shimmer"/>

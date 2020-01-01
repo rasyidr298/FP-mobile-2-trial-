@@ -4,82 +4,92 @@
     android:clickable="true"
     android:foreground="?android:attr/selectableItemBackground"
     android:layout_width="match_parent"
-    android:layout_height="190dp"
+    android:layout_height="wrap_content"
     xmlns:cardview="http://schemas.android.com/apk/res-auto"
     android:layout_margin="5dp"
     cardview:cardCornerRadius="4dp">
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/img_pr"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            android:scaleType="centerCrop" />
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="120dp"
+            android:layout_height="120dp">
+
+            <ImageView
+                android:id="@+id/img_pr"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:scaleType="centerCrop" />
+        </RelativeLayout>
 
 
-        <LinearLayout
-            android:layout_width="244dp"
-            android:layout_height="176dp"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
+                android:layout_marginTop="10dp"
                 android:id="@+id/tv_name"
-                android:layout_width="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:textStyle="bold"
                 android:text="nama"
                 android:textColor="#2d2d2d"
-                android:textSize="13sp" />
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/kat"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="k"
-                android:textColor="#2d2d2d"
-                android:textSize="13sp" />
-
+                android:visibility="invisible"/>
 
             <TextView
                 android:id="@+id/desc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="d"
-                android:textColor="#2d2d2d"
-                android:textSize="13sp" />
-
-
-            <TextView
-                android:id="@+id/hrg"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="h"
-                android:textColor="#2d2d2d"
-                android:textSize="13sp" />
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/tv_name"
+                android:layout_centerHorizontal="true"
+                android:layout_width="250dp"
+                android:layout_height="30dp" />
 
             <RelativeLayout
-                android:layout_width="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/fav_btn"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ic_favorite_border_black_24dp" />
+                <TextView
+                    android:id="@+id/hrg"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="harga"
+                    android:textColor="#2d2d2d"
+                    android:textSize="22sp" />
 
+                <ImageView
+                    android:layout_marginRight="5dp"
+                    android:id="@+id/fav_btn"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_favorite_border_black_24dp" />
 
             </RelativeLayout>
 
-        </LinearLayout>
 
 
+        </RelativeLayout>
 
     </LinearLayout>
+
+
 </androidx.cardview.widget.CardView>

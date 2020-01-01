@@ -49,7 +49,7 @@ public class WisataSurabaya extends AppCompatActivity {
     private ViewPager viewPager;
 
     //Deklarasi Tipe Data
-    private static final String HI = "https://rasyidridla.000webhostapp.com/TRAVELINK/datawisata.json";
+    private static final String HI = "https://rasyidridla.000webhostapp.com/TRAVELINK/Suroboyo/Surabaya.json";
     private List<WisataSurabayaModel> wisataSurabayaModels;
     private RecyclerView recyclerView;
     WisataSurabayaAdapter adapter;

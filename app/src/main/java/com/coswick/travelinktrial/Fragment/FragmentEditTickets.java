@@ -20,7 +20,7 @@ import com.coswick.travelinktrial.util.Constants;
 
 public class FragmentEditTickets extends Fragment {
 
-    private TextView txtNome, txtIdade, txtEmail, txtSalvar, txtCancelar, txtEditar;
+    private TextView txtNamaWisata, txtHarga,txt_Jumlah, txt_Kategori,txt_Tanggal,txtNama_Pemesan,txt_Nik,txtSave, txtCancle, txtEdit;
     private EditText edt_comentarios;
     private ImageView imgReturn;
     private ClienteDAO dao = null;
@@ -36,9 +36,16 @@ public class FragmentEditTickets extends Fragment {
 
         if(args != null){
             idClienteBD = Integer.parseInt(args.getString(Constants.LB_ID));
-            this.txtNome.setText(args.getString(Constants.TXT_NAMA));
-            this.txtIdade.setText(args.getString(Constants.TXT_HARGA));
-            this.txtEmail.setText(args.getString(Constants.TXT_EMAIL));
+
+            this.txtNamaWisata.setText(args.getString(Constants.TXT_NAMA_WISATA));
+            this.txtHarga.setText(args.getString(Constants.TXT_HARGA));
+            this.txt_Jumlah.setText(args.getString(Constants.TXT_JUMLAH));
+            this.txt_Kategori.setText(args.getString(Constants.TXT_KATEGORI));
+            this.txt_Tanggal.setText(args.getString(Constants.TXT_TANGGAL));
+            this.txtNama_Pemesan.setText(args.getString(Constants.TXT_NAMA_PEMESAN));
+            this.txtNama_Pemesan.setText(args.getString(Constants.TXT_NAMA_PEMESAN));
+            this.txt_Nik.setText(args.getString(Constants.TXT_NIK));;
+
             this.edt_comentarios.setText(args.getString(Constants.TXT_KOMENTAR));
         }
 
@@ -46,13 +53,19 @@ public class FragmentEditTickets extends Fragment {
     }
 
     private void initUi(View view){
-        this.txtNome = (TextView) view.findViewById(R.id.txt_nama_wisata);
-        this.txtIdade = (TextView) view.findViewById(R.id.txt_harga);
-        this.txtEmail = (TextView) view.findViewById(R.id.txt_pemesan);
+        this.txtNamaWisata = (TextView) view.findViewById(R.id.txt_nama_wisata);
+        this.txtHarga = (TextView) view.findViewById(R.id.txt_harga);
+        this.txt_Jumlah = (TextView) view.findViewById(R.id.txt_jumlah);
+        this.txt_Kategori = (TextView) view.findViewById(R.id.txt_kategori_umur);
+        this.txt_Tanggal = (TextView) view.findViewById(R.id.txt_tanggal);
+        this.txtHarga = (TextView) view.findViewById(R.id.txt_harga);
+        this.txtNama_Pemesan = (TextView) view.findViewById(R.id.txt_pemesan);
+        this.txt_Nik = (TextView) view.findViewById(R.id.txt_nik);
+
         this.edt_comentarios = (EditText) view.findViewById(R.id.edt_comentar);
-        this.txtSalvar = (TextView) view.findViewById(R.id.txt_save_comentar);
-        this.txtCancelar = (TextView) view.findViewById(R.id.txt_cancel);
-        this.txtEditar = (TextView) view.findViewById(R.id.txt_edit);
+        this.txtSave = (TextView) view.findViewById(R.id.txt_save_comentar);
+        this.txtCancle = (TextView) view.findViewById(R.id.txt_cancel);
+        this.txtEdit = (TextView) view.findViewById(R.id.txt_edit);
         this.imgReturn = (ImageView) view.findViewById(R.id.img_return);
 
         callFragList();
@@ -75,15 +88,15 @@ public class FragmentEditTickets extends Fragment {
     }
 
     private void editComentario(){
-        this.txtEditar.setOnClickListener(new View.OnClickListener() {
+        this.txtEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 edt_comentarios.setEnabled(true);
                 edt_comentarios.requestFocus();
                 cursorEndText();
                 if(edt_comentarios.requestFocus()){
-                    txtSalvar.setVisibility(View.VISIBLE);
-                    txtCancelar.setVisibility(View.VISIBLE);
+                    txtSave.setVisibility(View.VISIBLE);
+                    txtCancle.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -92,12 +105,12 @@ public class FragmentEditTickets extends Fragment {
     }
 
     private void funcBtnSave(){
-        this.txtSalvar.setOnClickListener(new View.OnClickListener() {
+        this.txtSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(!edt_comentarios.getText().equals("")){
                     TicketModel cli = dao.getById(idClienteBD);
-                    cli.setComentario(edt_comentarios.getText().toString());
+                    cli.setComentar(edt_comentarios.getText().toString());
                     boolean status = dao.update(cli);
                     if(status == true){
                         mechanicOfProcess();
@@ -109,7 +122,7 @@ public class FragmentEditTickets extends Fragment {
         });
     }
     private void funcBtnCancel(){
-        this.txtCancelar.setOnClickListener(new View.OnClickListener() {
+        this.txtCancle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mechanicOfProcess();
@@ -119,7 +132,7 @@ public class FragmentEditTickets extends Fragment {
 
     private void mechanicOfProcess(){
         edt_comentarios.setEnabled(false);
-        txtSalvar.setVisibility(View.GONE);
-        txtCancelar.setVisibility(View.GONE);
+        txtSave.setVisibility(View.GONE);
+        txtCancle.setVisibility(View.GONE);
     }
 }

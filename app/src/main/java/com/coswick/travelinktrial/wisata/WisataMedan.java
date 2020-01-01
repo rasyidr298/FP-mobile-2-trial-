@@ -49,7 +49,7 @@ public class WisataMedan extends AppCompatActivity {
     private ViewPager viewPager;
 
     //Deklarasi Tipe Data
-    private static final String HI = "https://rasyidridla.000webhostapp.com/TRAVELINK/datawisata.json";
+    private static final String HI = "https://rasyidridla.000webhostapp.com/TRAVELINK/yogyakarta/yogyakarta.json";
     private List<WisataMedanModel> wisataMedanModels;
     private RecyclerView recyclerView;
     WisataMedanAdapter adapter;

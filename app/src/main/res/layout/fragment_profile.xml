@@ -29,13 +29,14 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 android:id="@+id/linearLayout"
-                android:background="@drawable/bg_profile_bk">
+                android:background="@color/blue">
 
                 <ImageView
+                    android:layout_marginTop="20dp"
                     android:id="@+id/image_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_profile_round" />
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/muka" />
 
                 <TextView
                     android:id="@+id/txt_nama"
@@ -65,7 +66,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
-                        android:background="@drawable/bg_profile_bk"/>
+                        android:background="@color/blue"/>
 
                     <TextView
                         android:text="Back to\nHome"

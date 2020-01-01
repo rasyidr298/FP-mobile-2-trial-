@@ -52,7 +52,7 @@ public class LogIn extends AppCompatActivity {
                 startActivity(new Intent(LogIn.this, BottomNav.class));
 
                 Toast.makeText(getApplicationContext(), "Success Login", Toast.LENGTH_SHORT).show();
-                createNotification("ini adalah pesan notifikasi",LogIn.this);
+                createNotification("Berhasil Login",LogIn.this);
             }
         });
 

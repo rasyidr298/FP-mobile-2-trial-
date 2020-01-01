@@ -85,7 +85,7 @@
                                 android:id="@+id/edt_nama"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Email"
+                                android:hint="Nama"
                                 android:inputType="textEmailAddress"
                                 android:maxLines="1"
                                 android:textSize="17sp" />
@@ -100,8 +100,7 @@
                                 android:id="@+id/edt_email"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Pasword"
-                                android:inputType="textPassword"
+                                android:hint="Email"
                                 android:maxLines="1"
                                 android:textSize="17sp"  />
                         </com.google.android.material.textfield.TextInputLayout>

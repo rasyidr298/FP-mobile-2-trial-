@@ -11,6 +11,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <androidx.cardview.widget.CardView
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="5dp"
@@ -20,6 +21,7 @@
         app:cardElevation="10dp">
 
         <LinearLayout
+            android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -57,10 +59,58 @@
                 android:layout_height="wrap_content">
 
                 <EditText
+                    android:id="@+id/edt_jumlah_ticket"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="jumlah ticket"
+                    android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edt_kategori_umur"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="kategori umur"
+                    android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edt_tanggal_transaksi"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="tanggal transaksi"
+                    android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
                     android:id="@+id/edt_nama_pemesan"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="nama pemesan"
+                    android:singleLine="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edt_nik"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="masukan NIK"
                     android:singleLine="true"/>
             </com.google.android.material.textfield.TextInputLayout>
 

@@ -50,7 +50,7 @@ public class WisataWonogiri extends AppCompatActivity {
     private ViewPager viewPager;
 
     //Deklarasi Tipe Data
-    private static final String HI = "https://rasyidridla.000webhostapp.com/TRAVELINK/datawisata.json";
+    private static final String HI = "https://rasyidridla.000webhostapp.com/TRAVELINK/wonogiri/wonogiri.json";
     private List<WisataWonogiriModel> wisataWonogiriModels;
     private RecyclerView recyclerView;
     WisataWonogiriAdapter adapter;

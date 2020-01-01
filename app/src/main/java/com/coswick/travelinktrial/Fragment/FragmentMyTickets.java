@@ -1,5 +1,7 @@
 package com.coswick.travelinktrial.Fragment;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -24,7 +26,7 @@ import java.util.List;
 public class FragmentMyTickets extends Fragment {
 
     private TextView txtMsg;
-    private ListView listaClientes;
+    private ListView listView;
     private TicketAdapter adapter;
     private List<TicketModel> ticketModels;
     private ClienteDAO dao = null;
@@ -33,31 +35,35 @@ public class FragmentMyTickets extends Fragment {
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_my_tickets,container,false);
         initUi(view);
+
         return view;
     }
 
     private void initUi(View view){
-        this.txtMsg = (TextView) view.findViewById(R.id.txt_msg_empty);
-        this.listaClientes = (ListView) view.findViewById(R.id.lista_clientes);
+        this.txtMsg =  view.findViewById(R.id.txt_msg_empty);
+        this.listView = view.findViewById(R.id.list_view_ticket);
         loadData(view);
 
-        this.listaClientes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        this.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 int idCliente = ticketModels.get(position).getId();
-                String nome = ticketModels.get(position).getNome();
-                int idade = ticketModels.get(position).getIdade();
-                String email = ticketModels.get(position).getEmail();
-                String comentario = ticketModels.get(position).getComentario();
-
+                String nama_wisata = ticketModels.get(position).getNama_wisata();
+                int harga = ticketModels.get(position).getHarga();
+                String jumlah = ticketModels.get(position).getJumlah_ticket();
+                String kategori = ticketModels.get(position).getKategori_wisata();
+                String tanggal = ticketModels.get(position).getTanggal();
+                String nama_pemesan = ticketModels.get(position).getNama_pemesan();
+                String nik = ticketModels.get(position).getNik();
+                String comentar = ticketModels.get(position).getComentar();
                 Fragment fragment = new FragmentEditTickets();
-                fragment.setArguments(passParams(idCliente,  nome, idade, email, comentario));
+                fragment.setArguments(passParams(idCliente,  nama_wisata, harga, jumlah, kategori, tanggal,  nama_pemesan, nik, comentar));
                 FragmentManager fm = getFragmentManager();
                 fm.beginTransaction().replace(R.id.frame_layout, fragment).commit();
             }
         });
 
-        this.listaClientes.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        this.listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 idCli = ticketModels.get(position).getId();
@@ -70,23 +76,28 @@ public class FragmentMyTickets extends Fragment {
 
     private void loadData(View view){
         this.dao = new ClienteDAO(view.getContext());
+
         ticketModels = this.dao.getAll();
 
         if(ticketModels.size() > 0){
             this.adapter = new TicketAdapter(getContext(), ticketModels);
-            this.listaClientes.setAdapter(adapter);
+            this.listView.setAdapter(adapter);
         }else{
             this.txtMsg.setText(Constants.MSG_EMPTY_REGISTERS);
         }
     }
 
-    private Bundle passParams(int id, String nome, int idade, String email, String comentario){
+    private Bundle passParams(int id, String nama_wisata, int harga, String jumlah, String kategori, String tanggal, String nama_pemesan,String nik, String comentar){
         Bundle params = new Bundle();
         params.putString(Constants.LB_ID, String.valueOf(id));
-        params.putString(Constants.TXT_NAMA, nome);
-        params.putString(Constants.TXT_HARGA, String.valueOf(idade));
-        params.putString(Constants.TXT_EMAIL, email);
-        params.putString(Constants.TXT_KOMENTAR, comentario);
+        params.putString(Constants.TXT_NAMA_WISATA, nama_wisata);
+        params.putString(Constants.TXT_HARGA, String.valueOf(harga));
+        params.putString(Constants.TXT_JUMLAH, jumlah);
+        params.putString(Constants.TXT_KATEGORI, kategori);
+        params.putString(Constants.TXT_TANGGAL, tanggal);
+        params.putString(Constants.TXT_NAMA_PEMESAN, nama_pemesan);
+        params.putString(Constants.TXT_NIK, nik);
+        params.putString(Constants.TXT_KOMENTAR, comentar);
         return params;
     }
 
@@ -95,8 +106,8 @@ public class FragmentMyTickets extends Fragment {
         alertDialogBuilder.setTitle(Constants.TXT_ALERT);
         alertDialogBuilder.setIcon(R.drawable.ic_profile);
 
-        alertDialogBuilder.setMessage(Constants.TXT_ALERT_MSG_DEL).setCancelable(false)
-                .setPositiveButton(Constants.TXT_ALERT_DEL_POSITIVE_BUTTON,
+        alertDialogBuilder.setMessage(Constants.TXT_ALERT_PILIHAN_KELUAR).setCancelable(false)
+                .setPositiveButton(Constants.TXT_ALERT_KELUAR_YA,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 TicketModel cli = dao.getById(idCli);

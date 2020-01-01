@@ -45,19 +45,38 @@ public class TicketAdapter extends BaseAdapter {
         View rowView = convertView;
         rowView = inflater.inflate(R.layout.item_tickets, null);
 
-        holder.txtCliente = (TextView) rowView.findViewById(R.id.txt_nama_wisata);
-        holder.txtEmail = (TextView) rowView.findViewById(R.id.txt_pemesan);
 
-        String texto = ticketModels.get(position).getNome() + ", " + ticketModels.get(position).getIdade() + " Rp.";
-        holder.txtCliente.setText(texto);
 
-        holder.txtEmail.setText(ticketModels.get(position).getEmail());
+        holder.txtnama_wisata = (TextView) rowView.findViewById(R.id.txt_nama_wisata);
+        holder.txt_harga = (TextView) rowView.findViewById(R.id.txt_harga);
+        holder.txt_jumlah = (TextView) rowView.findViewById(R.id.txt_jumlah);
+        holder.txt_kategori = (TextView) rowView.findViewById(R.id.txt_kategori_umur);
+        holder.txt_tanggal = (TextView) rowView.findViewById(R.id.txt_tanggal);
+        holder.txt_pemesan = (TextView) rowView.findViewById(R.id.txt_pemesan);
+        holder.txt_nik = (TextView) rowView.findViewById(R.id.txt_nik);
+
+
+
+
+
+        holder.txtnama_wisata.setText(ticketModels.get(position).getNama_wisata());
+        holder.txt_harga.setText( " Rp."+ ticketModels.get(position).getHarga());
+        holder.txt_jumlah.setText(ticketModels.get(position).getJumlah_ticket());
+        holder.txt_kategori.setText(ticketModels.get(position).getKategori_wisata());
+        holder.txt_tanggal.setText(ticketModels.get(position).getTanggal());
+        holder.txt_pemesan.setText(ticketModels.get(position).getNama_pemesan());
+        holder.txt_nik.setText(ticketModels.get(position).getNik());
 
         return rowView;
     }
 
     public class ViewHolder{
-        TextView txtCliente;
-        TextView txtEmail;
+        TextView txtnama_wisata;
+        TextView txt_harga;
+        TextView txt_jumlah;
+        TextView txt_kategori;
+        TextView txt_tanggal;
+        TextView txt_pemesan;
+        TextView txt_nik;
     }
 }

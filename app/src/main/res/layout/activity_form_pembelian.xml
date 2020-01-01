@@ -26,15 +26,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <ImageView
+                <com.vipulasri.ticketview.TicketView
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="30dp"
+                    app:ticketOrientation="vertical"
+                    app:ticketElevation="12dp"
+                    app:ticketScallopRadius="10dp"
+                    app:ticketDividerPadding="0dp"
+                    app:ticketShowBorder="false"
+                    app:ticketScallopPositionPercent="35"
+                    app:ticketShowDivider="true"
+                    app:ticketDividerType="dash"/>
+
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginTop="10dp"
-                    android:adjustViewBounds="true"
-                    android:cropToPadding="true"/>
+                    android:text="   GET    YOUR TICKET"
+                    android:textColor="@color/blue"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"/>
+
             </RelativeLayout>
 
             <androidx.appcompat.widget.Toolbar

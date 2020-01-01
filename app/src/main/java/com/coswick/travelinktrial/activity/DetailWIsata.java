@@ -1,11 +1,14 @@
 package com.coswick.travelinktrial.activity;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -36,10 +39,32 @@ public class DetailWIsata extends AppCompatActivity {
         deskripsi.setText(getIntent().getStringExtra("desc"));
         harga.setText(getIntent().getStringExtra("harga"));
 
-
         deskripsi.setMovementMethod(LinkMovementMethod.getInstance());
 
+
+        //Collapsing Toolbar
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar_detail_wisata);
+        setSupportActionBar(toolbar);
+        if(getSupportActionBar() != null)
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
+
+    //Proses Back
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
     public void onClickBeli(View view) {
         startActivity(new Intent(this, FormPembelian.class));

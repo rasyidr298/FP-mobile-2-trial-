@@ -1,81 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".activity.DetailWIsata">
 
-    <ImageView
-        android:id="@+id/det_gambar"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout_detail_pop"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_margin="5dp">
-    </ImageView>
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:fitsSystemWindows="true">
 
-    <RelativeLayout
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleTextAppearance="@android:color/transparent"
+            android:fitsSystemWindows="true">
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <ImageView
+                    android:id="@+id/det_gambar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/det_nm_wisata"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_gravity="bottom|center"
+                    android:layout_margin="5dp"
+                    android:background="#4D000000"
+                    android:gravity="bottom|center"
+                    android:text="Nama_Wisata"
+                    android:textColor="#ffffffff"
+                    android:textSize="22sp" />
+            </FrameLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_detail_wisata"
+                android:layout_width="match_parent"
+                android:layout_height="83dp"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_margin="20dp"
+        android:layout_below="@+id/app_bar_layout_detail_pop"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="15dp"
-        android:orientation="vertical">
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <TextView
-            android:id="@+id/det_nm_wisata"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Candi Prambanan"
-            android:textSize="26sp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/det_kategori"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:layout_below="@+id/det_nm_wisata"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Provinsi Yogyakarta"/>
-
-        <TextView
-            android:id="@+id/det_desc"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:linksClickable="true"
-            android:layout_below="@+id/det_kategori"
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="Candi ini terletak di kabupaten sleman, provinsi yogyakarta"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_alignParentBottom="true">
+            android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/det_harga"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:text="RP.50000"
+                android:id="@+id/det_kategori"
+                android:textSize="15sp"
                 android:textStyle="bold"
-                android:textSize="20sp"
-                android:layout_marginHorizontal="30dp"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Provinsi Yogyakarta"/>
 
-            <Button
-                android:onClick="onClickBeli"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:text="Beli"
-                android:textStyle="bold"
+            <TextView
+                android:id="@+id/det_desc"
+                android:layout_below="@+id/det_kategori"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:textColor="#fff"
-                android:background="@drawable/bg_button_login"/>
+                android:text="Candi ini terletak di kabupaten sleman, provinsi yogyakarta"/>
 
-        </LinearLayout>
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/det_harga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RP.50000"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:layout_marginHorizontal="30dp"/>
+
+        <Button
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentRight="true"
+            android:onClick="onClickBeli"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="Beli"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:background="@drawable/bg_button_login"/>
 
     </RelativeLayout>
 
-</LinearLayout>
+</RelativeLayout>

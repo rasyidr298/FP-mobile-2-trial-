@@ -1,79 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".activity.DetailWIsata">
+    tools:context=".activity.DetailWisataPopuler">
 
-    <ImageView
-        android:id="@+id/pop_det_gambar"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_margin="5dp">
-    </ImageView>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="15dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/pop_det_nm_wisata"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout_detail_pop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Candi Prambanan"
-            android:textSize="26sp"
-            android:textStyle="bold"/>
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:fitsSystemWindows="true">
 
-        <TextView
-            android:id="@+id/pop_det_kategori"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:layout_below="@+id/det_nm_wisata"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Provinsi Yogyakarta"/>
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleTextAppearance="@android:color/transparent"
+                android:fitsSystemWindows="true">
 
-        <TextView
-            android:id="@+id/pop_det_desc"
-            android:layout_below="@+id/det_kategori"
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="Candi ini terletak di kabupaten sleman, provinsi yogyakarta"/>
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_alignParentBottom="true">
+                    <ImageView
+                        android:id="@+id/pop_det_gambar"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:scaleType="fitXY" />
 
-            <TextView
-                android:id="@+id/pop_det_harga"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:text="RP.50000"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:layout_marginHorizontal="30dp"/>
+                    <TextView
+                        android:id="@+id/pop_det_nm_wisata"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_gravity="bottom|center"
+                        android:layout_margin="5dp"
+                        android:background="#4D000000"
+                        android:gravity="bottom|center"
+                        android:text="Nama_Wisata"
+                        android:textColor="#ffffffff"
+                        android:textSize="22sp" />
+                </FrameLayout>
 
-            <Button
-                android:onClick="pop_onClickBeli"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:text="Beli"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:textColor="#fff"
-                android:background="@drawable/bg_button_login"/>
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar_detail_pop"
+                    android:layout_width="match_parent"
+                    android:layout_height="83dp"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
 
-        </LinearLayout>
+        </com.google.android.material.appbar.AppBarLayout>
 
-    </RelativeLayout>
 
-</LinearLayout>
+            <androidx.core.widget.NestedScrollView
+                android:layout_margin="20dp"
+                android:layout_below="@+id/app_bar_layout_detail_pop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/pop_det_kategori"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Provinsi Yogyakarta"/>
+
+                    <TextView
+                        android:id="@+id/pop_det_desc"
+                        android:layout_below="@+id/pop_det_kategori"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="Candi ini terletak di kabupaten sleman, provinsi yogyakarta"/>
+
+                </RelativeLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <RelativeLayout
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentBottom="true">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/pop_det_harga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RP.50000"
+                    android:textStyle="bold"
+                    android:textSize="24sp"/>
+
+                <Button
+                    android:layout_marginBottom="5dp"
+                    android:layout_alignParentRight="true"
+                    android:onClick="pop_onClickBeli"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:text="Beli"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="#fff"
+                    android:background="@drawable/bg_button_login"/>
+
+            </RelativeLayout>
+
+</RelativeLayout>

@@ -49,7 +49,7 @@ public class WisataSemua extends AppCompatActivity {
     private ViewPager viewPager;
 
     //Deklarasi Tipe Data
-    private static final String HI = "https://rasyidridla.000webhostapp.com/TRAVELINK/datawisata.json";
+    private static final String HI = "https://rasyidridla.000webhostapp.com/TRAVELINK/semua.json";
     private List<WisataSemuaModel> wisataSemuaModels;
     private RecyclerView recyclerView;
     WisataSemuaAdapter adapter;

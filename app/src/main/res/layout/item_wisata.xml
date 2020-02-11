@@ -36,6 +36,8 @@
             <TextView
                 android:layout_marginTop="10dp"
                 android:id="@+id/tv_name"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -53,6 +55,9 @@
 
             <TextView
                 android:id="@+id/desc"
+                android:maxLines="2"
+                android:gravity="center"
+                android:ellipsize="end"
                 android:layout_marginTop="5dp"
                 android:layout_below="@+id/tv_name"
                 android:layout_centerHorizontal="true"

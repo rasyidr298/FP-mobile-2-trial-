@@ -58,18 +58,29 @@
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
 
         <Button
             android:layout_marginTop="20dp"
             android:text="LOGOUT"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:textColor="#ffff"
+            android:textSize="10sp"
+            android:background="@drawable/bg_profile_back_button"
             android:id="@+id/btn_Logout"
-            android:layout_width="100dp"
-            android:layout_height="50dp"/>
+            android:layout_width="80dp"
+            android:layout_height="40dp"/>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:layout_marginTop="5dp"/>
+
+        </RelativeLayout>
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

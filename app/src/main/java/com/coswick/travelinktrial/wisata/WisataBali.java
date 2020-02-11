@@ -131,7 +131,8 @@ public class WisataBali extends AppCompatActivity {
                 for (int i=0; i<response.length(); i++){
                     try {
                         JSONObject ob=response.getJSONObject(i);
-                        WisataBaliModel pr=new WisataBaliModel(ob.getInt("id"),
+                        WisataBaliModel pr=new WisataBaliModel(
+                                ob.getInt("id"),
                                 ob.getString("nama_wisata"),
                                 ob.getString("kat_wisata"),
                                 ob.getString("desc_wisata"),

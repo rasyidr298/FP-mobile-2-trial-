@@ -6,53 +6,72 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/kotak"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/circle"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".activity.Promo"/>
+        <activity
+            android:name=".activity.Promo"/>
 
-        <activity android:name=".activity.Notifikasi" />
+        <activity
+            android:name=".activity.Notifikasi" />
 
         <activity android:name=".wisata.WisataWonogiri"
-            android:theme="@style/Wisata" />
+            android:theme="@style/Wisata"
+            android:label="Widata Wonogiri"/>
 
         <activity android:name=".wisata.WisataSurabaya"
-            android:theme="@style/Wisata" />
+            android:theme="@style/Wisata"
+            android:label="Wisata Surabaya" />
 
         <activity android:name=".wisata.WisataMedan"
-            android:theme="@style/Wisata" />
+            android:theme="@style/Wisata"
+            android:label="Wisata Medan"  />
 
         <activity android:name=".wisata.WisataBali"
-            android:theme="@style/Wisata" />
+            android:theme="@style/Wisata"
+            android:label="Wisata Bali"  />
 
         <activity android:name=".wisata.WisataAceh"
-            android:theme="@style/Wisata" />
+            android:theme="@style/Wisata"
+            android:label="Wisata Aceh"  />
 
         <activity android:name=".wisata.WisataKlaten"
-            android:theme="@style/Wisata" />
+            android:theme="@style/Wisata"
+            android:label="Wisata Klaten"  />
 
         <activity android:name=".wisata.WisataSemua"
-            android:theme="@style/Wisata" />
+            android:theme="@style/Wisata"
+            android:label="Semua Wisata"  />
 
         <activity
             android:name=".wisata.WisataYogya"
-            android:theme="@style/Wisata" />
+            android:theme="@style/Wisata"
+            android:label="Wisata Yogya"  />
 
-        <activity android:name=".activity.DetailWisataPopuler" />
+        <activity
+            android:name=".activity.DetailWisataPopuler"
+            android:label="Detail Wisata"/>
 
-        <activity android:name=".activity.DetailWIsata" />
+        <activity
+            android:name=".activity.DetailWIsata"
+            android:label="Detail Wisata" />
 
-        <activity android:name=".activity.FormPembelian" />
+        <activity
+            android:name=".activity.FormPembelian"
+            android:label="Form Pembelian"/>
 
-        <activity android:name=".activity.BottomNav"
+        <activity
+            android:name=".activity.BottomNav"
             android:theme="@style/Wisata"/>
 
-        <activity android:name=".activity.Register" />
+        <activity
+            android:name=".login.Register" />
 
-        <activity android:name=".activity.LogIn" />
+        <activity
+            android:name=".login.LogIn" />
 
         <activity android:name=".activity.SplashScreen">
             <intent-filter>

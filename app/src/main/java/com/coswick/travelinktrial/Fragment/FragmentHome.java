@@ -112,7 +112,7 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
         getData();
 
 
-        // button klik macam macam wisata
+        // card view klik macam macam wisata
         wisata_yogya = view.findViewById(R.id.wisata_yogyakarta);
         wisata_yogya.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -243,26 +243,58 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
 
         //Data untuk SlideZoomViewPager
         populerModels = new ArrayList<>();
-        populerModels.add(new PopulerModel(R.drawable.yog1, "Candi Prambanan", "Jalan paling terkenal di Yogyakarta adalah Jalan Malioboro. Di sepanjang jalan ini terdapat toko-toko dan pedagang kaki lima yang menjual berbagai macam barang, dari pakaian, kerajinan tangan sampai makanan. Salah satu hal yang khas mengenai Malioboro adalah penjual makanan lesehan.\",\n","Rp.40000","Yogyakarta"));
-        populerModels.add(new PopulerModel(R.drawable.yog2, "Pantai Indrayanti", "Pasar Beringharjo terletak di Jalan Malioboro. Pasar tertua di Yogyakarta ini terkenal sebagai tempat turis membeli souvenir dengan harga murah. Berbagai macam barang tersedia di pasar ini, dari batik, makanan tradisional, uang kuno, bahan dasar jamu tradisional hingga barang antik." ,"Rp.40000","Yogyakarta"));
-        populerModels.add(new PopulerModel(R.drawable.yog3, "Satu lagi tempat wisata di Jogja dekat Malioboro. Benteng Vredeburg juga terletak di Jalan Malioboro, tepatnya di depan Gedung Agung. Benteng yang kini telah menjadi museum yang berisi diorama mengenai sejarah Indonesia itu sangat cocok dikunjungi bagi Anda yang ingin menambah wawasan tentang sejarah Indonesia." , "Poster is any piece of printed paper designed to be attached to a wall or vertical surface.","Rp.40000","Yogyakarta"));
-        populerModels.add(new PopulerModel(R.drawable.yog5, "Pantai Pok Tunggal", "Museum Ullen Sentalu terletak di Jalan Boyong Km 25 Kaliurang Barat, Sleman,Yogyakarta. Tempat wisata Sleman ini dibangun diatas area seluas 1,2 hektar dengan suhu udara sekitar berkisar antara 15-20 derajat celcius. Arsitektur museum ini sangat unik, jalan masuk ke dalam museum sendiri terdiri dari undakan, kelokan dan labirin yang menuju ke salah satu ruang pameran yang berada di bawah tanah.",
-                "Rp.40000","Yogyakarta"));
+
+        populerModels.add(new PopulerModel(R.drawable.yog1,
+                "Candi Prambanan",
+                "Jalan paling terkenal di Yogyakarta adalah Jalan Malioboro. Di sepanjang jalan ini terdapat toko-toko dan pedagang kaki lima yang menjual berbagai macam barang, dari pakaian, kerajinan tangan sampai makanan. Salah satu hal yang khas mengenai Malioboro adalah penjual makanan lesehan.\",\n",
+                "Rp.25.000",
+                "Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.yog2,
+                "Pantai Indrayanti",
+                "Pasar Beringharjo terletak di Jalan Malioboro. Pasar tertua di Yogyakarta ini terkenal sebagai tempat turis membeli souvenir dengan harga murah. Berbagai macam barang tersedia di pasar ini, dari batik, makanan tradisional, uang kuno, bahan dasar jamu tradisional hingga barang antik." ,
+                "Rp.47.000",
+                "Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.yog3,
+                "Pantai Sembukan" ,
+                "Obyek Wisata Pantai Nampu menawarkan sejuta pesona keindahan alam dengan hamparan pantai berpasir putih dan batu karang cantik yang masih terjaga kealamiannya, deburan ombak yang beradu dengan bebatuan karang menjadi salah satu pesona keindahan yang dimiliki pantai ini.",
+                "Rp.25.000",
+                "Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.yog5,
+                "Pantai Pok Tunggal",
+                "Museum Ullen Sentalu terletak di Jalan Boyong Km 25 Kaliurang Barat, Sleman,Yogyakarta. Tempat wisata Sleman ini dibangun diatas area seluas 1,2 hektar dengan suhu udara sekitar berkisar antara 15-20 derajat celcius. Arsitektur museum ini sangat unik, jalan masuk ke dalam museum sendiri terdiri dari undakan, kelokan dan labirin yang menuju ke salah satu ruang pameran yang berada di bawah tanah.",
+                "Rp.15.000",
+                "Yogyakarta"));
         populerModels.add(new PopulerModel(R.drawable.yog4, "Jalan Malioboro", "Satu lagi tempat wisata di Jogja dekat Malioboro. Benteng Vredeburg juga terletak di Jalan Malioboro, tepatnya di depan Gedung Agung. Benteng yang kini telah menjadi museum yang berisi diorama mengenai sejarah Indonesia itu sangat cocok dikunjungi bagi Anda yang ingin menambah wawasan tentang sejarah Indonesia.",
-                "Rp.40000","Yogyakarta"));
-        populerModels.add(new PopulerModel(R.drawable.yog6, "Pasar Bringharjo", "Satu lagi tempat wisata di Jogja dekat Malioboro. Benteng Vredeburg juga terletak di Jalan Malioboro, tepatnya di depan Gedung Agung. Benteng yang kini telah menjadi museum yang berisi diorama mengenai sejarah Indonesia itu sangat cocok dikunjungi bagi Anda yang ingin menambah wawasan tentang sejarah Indonesia.",
-                "Rp.40000","Yogyakarta"));
-        populerModels.add(new PopulerModel(R.drawable.yog7, "Benteng Vredebrug", "Satu lagi tempat wisata di Jogja dekat Malioboro. Benteng Vredeburg juga terletak di Jalan Malioboro, tepatnya di depan Gedung Agung. Benteng yang kini telah menjadi museum yang berisi diorama mengenai sejarah Indonesia itu sangat cocok dikunjungi bagi Anda yang ingin menambah wawasan tentang sejarah Indonesia.",
-                "Rp.40000","Yogyakarta"));
-        populerModels.add(new PopulerModel(R.drawable.yog8, "Museum Ullen Sentalu", "Museum Ullen Sentalu terletak di Jalan Boyong Km 25 Kaliurang Barat, Sleman,Yogyakarta. Tempat wisata Sleman ini dibangun diatas area seluas 1,2 hektar dengan suhu udara sekitar berkisar antara 15-20 derajat celcius. Arsitektur museum ini sangat unik, jalan masuk ke dalam museum sendiri terdiri dari undakan, kelokan dan labirin yang menuju ke salah satu ruang pameran yang berada di bawah tanah.",
-                "Rp.40000","Yogyakarta"));
-        populerModels.add(new PopulerModel(R.drawable.yog9, "Kraton Yogyakarta", "Salah satu tempat wisata budaya lainnya di Yogyakarta adalah Keraton Yogyakarta. Keraton ini adalah salah satu bangunan bersejarah kesultanan Yogyakarta yang ditempati oleh Sultan dan keluarga Sultan. Di keraton ini juga terdapat museum yang memamerkan barang-barang kesultanan Yogyakarta dari barang rumah tangga sampai barang-barang unik yang sebagian merupakan hadiah dari raja Eropa.",
-                "Rp.40000","Yogyakarta"));
-        populerModels.add(new PopulerModel(R.drawable.yog10, "Taman Sari", "Jaman dulu Taman Sari Jogja merupakan tempat rekreasi dan meditasi keluarga kerajaan Yogyakarta. Pesona Istana Taman Sari terletak pada keindahan arsitekturnya yang kuno dan pemandangan yang indah.", "Rp.40000","Yogyakarta"));
+                "Rp.8.000",
+                "Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.yog6,
+                "Pasar Bringharjo",
+                "Satu lagi tempat wisata di Jogja dekat Malioboro. Benteng Vredeburg juga terletak di Jalan Malioboro, tepatnya di depan Gedung Agung. Benteng yang kini telah menjadi museum yang berisi diorama mengenai sejarah Indonesia itu sangat cocok dikunjungi bagi Anda yang ingin menambah wawasan tentang sejarah Indonesia.",
+                "Rp.90.000",
+                "Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.yog7,
+                "Benteng Vredebrug",
+                "Satu lagi tempat wisata di Jogja dekat Malioboro. Benteng Vredeburg juga terletak di Jalan Malioboro, tepatnya di depan Gedung Agung. Benteng yang kini telah menjadi museum yang berisi diorama mengenai sejarah Indonesia itu sangat cocok dikunjungi bagi Anda yang ingin menambah wawasan tentang sejarah Indonesia.",
+                "Rp.10.000",
+                "Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.yog8,
+                "Museum Ullen Sentalu", "Museum Ullen Sentalu terletak di Jalan Boyong Km 25 Kaliurang Barat, Sleman,Yogyakarta. Tempat wisata Sleman ini dibangun diatas area seluas 1,2 hektar dengan suhu udara sekitar berkisar antara 15-20 derajat celcius. Arsitektur museum ini sangat unik, jalan masuk ke dalam museum sendiri terdiri dari undakan, kelokan dan labirin yang menuju ke salah satu ruang pameran yang berada di bawah tanah.",
+                "Rp.80.000",
+                "Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.yog9,
+                "Kraton Yogyakarta", "Salah satu tempat wisata budaya lainnya di Yogyakarta adalah Keraton Yogyakarta. Keraton ini adalah salah satu bangunan bersejarah kesultanan Yogyakarta yang ditempati oleh Sultan dan keluarga Sultan. Di keraton ini juga terdapat museum yang memamerkan barang-barang kesultanan Yogyakarta dari barang rumah tangga sampai barang-barang unik yang sebagian merupakan hadiah dari raja Eropa.",
+                "Rp.60.000",
+                "Yogyakarta"));
+        populerModels.add(new PopulerModel(R.drawable.yog10,
+                "Taman Sari",
+                "Jaman dulu Taman Sari Jogja merupakan tempat rekreasi dan meditasi keluarga kerajaan Yogyakarta. Pesona Istana Taman Sari terletak pada keindahan arsitekturnya yang kuno dan pemandangan yang indah.",
+                "Rp.20.000",
+                "Yogyakarta"));
+
         populerAdapter = new PopulerAdapter(getActivity(), populerModels);
         viewPager = view.findViewById(R.id.viewPager);
         viewPager.setAdapter(populerAdapter);
-        viewPager.setPadding(280, 0, 280, 0);
+        viewPager.setPadding(250, 0, 250, 0);
 
 
         //Merubah Warna setiap SlideZoomViewPager

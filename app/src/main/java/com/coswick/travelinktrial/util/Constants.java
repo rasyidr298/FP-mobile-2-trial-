@@ -8,7 +8,7 @@ public class Constants {
     public static final String TXT_BUTUN_NO = "Batal";
     public static final String TXT_ALERT_PILIHAN_KELUAR = "Yakin Mau Di Hapus ?";
     public static final String TXT_ALERT_KELUAR_YA = "Ya";
-    public static final String MSG_EMPTY_REGISTERS = "Não existem clientes cadastrados...";
+    public static final String MSG_EMPTY_REGISTERS = "Belum Ada Transaksi Ticket...";
     public static final String MSG_SAVE_SUCESS = "Registro salvo com sucesso!";
     public static final String ERR_UPDATE = "Não foi possível salvar o comentário...";
     public static final String HINT_INPUT_NOME = "Tidak Boleh Kosong";

@@ -7,8 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".activity.DetailWIsata">
 
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/app_bar_layout_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar_layout_detail_pop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -56,38 +61,43 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_margin="20dp"
-        android:layout_below="@+id/app_bar_layout_detail_pop"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <RelativeLayout
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:layout_below="@+id/app_bar_layout_detail"
+            android:layout_margin="20dp"
+            android:clipToPadding="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <TextView
-                android:id="@+id/det_kategori"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Provinsi Yogyakarta"/>
-
-            <TextView
-                android:id="@+id/det_desc"
-                android:layout_below="@+id/det_kategori"
-                android:layout_marginTop="5dp"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Candi ini terletak di kabupaten sleman, provinsi yogyakarta"/>
+                android:layout_marginBottom="50dp">
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/det_kategori"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Provinsi Yogyakarta"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
-    </androidx.core.widget.NestedScrollView>
+                <TextView
+                    android:id="@+id/det_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/det_kategori"
+                    android:layout_marginTop="5dp"
+                    android:text="Candi ini terletak di kabupaten sleman, provinsi yogyakarta"
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 
     <RelativeLayout
         android:layout_margin="20dp"

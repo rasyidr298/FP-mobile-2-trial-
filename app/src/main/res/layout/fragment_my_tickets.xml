@@ -6,6 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".Fragment.FragmentMyTickets">
 
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_mytickets"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/blue"
+        android:elevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="15dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true">
+
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_logo"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
     <TextView
         android:id="@+id/txt_msg_empty"
         android:layout_width="match_parent"
@@ -14,6 +43,7 @@
         android:gravity="center"/>
 
     <ListView
+        android:layout_below="@+id/toolbar_mytickets"
         android:id="@+id/list_view_ticket"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

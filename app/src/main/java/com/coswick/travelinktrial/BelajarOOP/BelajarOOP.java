@@ -52,6 +52,22 @@ public class BelajarOOP {
     }
 
 
+    // 11. Belajar Static
+    public class Users{
+        public String nama;
+        public String nik;
+        public int umur;
+
+        public void tanyaNama(){
+            System.out.println("Nama : " );
+        }
+
+        public int umur(){
+            int hasilUmur = 20;
+            return hasilUmur;
+        }
+    }
+
 
 
 }

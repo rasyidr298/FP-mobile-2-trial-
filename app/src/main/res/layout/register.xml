@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.Register"
+    tools:context=".login.Register"
     android:background="@color/blue"
     android:gravity="center"
     android:layout_gravity="center"
@@ -68,9 +68,10 @@
                             android:layout_marginTop="20dp">
 
                             <EditText
+                                android:id="@+id/edit_username"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Nama"
+                                android:hint="Username"
                                 android:inputType="textPersonName"
                                 android:maxLines="1"
                                 android:textSize="17sp" />
@@ -110,6 +111,7 @@
                             android:layout_marginTop="20dp">
 
                             <EditText
+                                android:id="@+id/edit_password"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Pasword"
@@ -123,7 +125,7 @@
                 </androidx.cardview.widget.CardView>
 
                     <Button
-                        android:onClick="onLoginClick"
+                        android:onClick="registerClick"
                         android:id="@+id/btn_register"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="340dp"

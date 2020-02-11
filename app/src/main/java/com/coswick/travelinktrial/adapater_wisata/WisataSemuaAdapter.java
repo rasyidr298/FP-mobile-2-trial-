@@ -139,6 +139,8 @@ public class WisataSemuaAdapter extends RecyclerView.Adapter<WisataSemuaAdapter.
         }
     }
 
+
+    // Proses Searching
     @Override
     public Filter getFilter() {
         return exampleFilter;

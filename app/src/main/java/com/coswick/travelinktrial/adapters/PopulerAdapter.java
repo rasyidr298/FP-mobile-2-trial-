@@ -60,6 +60,7 @@ public class PopulerAdapter extends PagerAdapter{
         desc.setText(populerModels.get(position).getDesc());
         harga.setText(populerModels.get(position).getHarga());
 
+        //Untuk mengambil dan menampilkan data detail wisata populer
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

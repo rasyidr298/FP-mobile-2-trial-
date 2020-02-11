@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.coswick.travelinktrial.R;
+import com.coswick.travelinktrial.login.LogIn;
 
 public class SplashScreen extends AppCompatActivity {
 

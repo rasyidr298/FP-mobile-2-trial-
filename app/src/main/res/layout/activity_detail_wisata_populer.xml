@@ -7,8 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".activity.DetailWisataPopuler">
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/app_bar_layout_detail_pop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/app_bar_layout_detail_pop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -56,7 +60,9 @@
         </com.google.android.material.appbar.AppBarLayout>
 
 
-            <androidx.core.widget.NestedScrollView
+
+
+    <androidx.core.widget.NestedScrollView
                 android:layout_margin="20dp"
                 android:layout_below="@+id/app_bar_layout_detail_pop"
                 android:layout_width="match_parent"
@@ -66,7 +72,8 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="50dp">
 
                     <TextView
                         android:id="@+id/pop_det_kategori"
@@ -88,6 +95,9 @@
                 </RelativeLayout>
 
             </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
             <RelativeLayout
                 android:layout_margin="20dp"

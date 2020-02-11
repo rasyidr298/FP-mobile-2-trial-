@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".activity.LogIn"
+    tools:context=".login.LogIn"
     android:gravity="center"
     android:layout_gravity="center"
     android:background="@color/blue">
@@ -82,11 +82,10 @@
                             android:layout_marginTop="20dp">
 
                             <EditText
-                                android:id="@+id/edt_nama"
+                                android:id="@+id/edit_username"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Nama"
-                                android:inputType="textEmailAddress"
+                                android:hint="Username"
                                 android:maxLines="1"
                                 android:textSize="17sp" />
                         </com.google.android.material.textfield.TextInputLayout>
@@ -97,12 +96,13 @@
                             android:layout_marginTop="20dp">
 
                             <EditText
-                                android:id="@+id/edt_email"
+                                android:id="@+id/edit_password"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Email"
+                                android:hint="Password"
+                                android:inputType="textPassword"
                                 android:maxLines="1"
-                                android:textSize="17sp"  />
+                                android:textSize="17sp" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                     </LinearLayout>
@@ -115,7 +115,7 @@
                     android:layout_height="60dp"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
-                    android:background="@drawable/ic_add"
+                    android:background="@drawable/ic_regis"
                     android:elevation="300dp"
                     android:text="+"
                     android:textColor="#ffff"
@@ -164,9 +164,12 @@
                         style="@style/Widget.AppCompat.Button"/>
 
                 <LinearLayout
+                    android:id="@+id/btn_fb"
                     android:layout_below="@+id/btn_facebook"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"></LinearLayout>
+                    android:layout_height="30dp"
+                    android:orientation="horizontal">
+                </LinearLayout>
 
             </RelativeLayout>
 

@@ -1,4 +1,4 @@
-package com.coswick.travelinktrial.activity;
+package com.coswick.travelinktrial.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
@@ -17,21 +17,25 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.coswick.travelinktrial.R;
-import com.coswick.travelinktrial.SharedPref.SharedPrefManager;
+import com.coswick.travelinktrial.activity.BottomNav;
 
 public class LogIn extends AppCompatActivity {
     Button btn_login;
     SharedPrefManager sp;
     EditText nama, email;
+    SqliteHelper sqliteHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.log_in);
-        nama = findViewById(R.id.edt_nama);
-        email = findViewById(R.id.edt_email);
+
+        sqliteHelper = new SqliteHelper(this);
+        nama = findViewById(R.id.edit_username);
+        email = findViewById(R.id.edit_password);
         btn_login = findViewById(R.id.btn_login);
         sp = new SharedPrefManager(this);
+
         ceklogin();
         login();
 
@@ -41,18 +45,25 @@ public class LogIn extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nam = nama.getText().toString();
-                String e = email.getText().toString();
+                String user = nama.getText().toString();
+                String pass = email.getText().toString();
 
-                sp.saveSPString(SharedPrefManager.SP_NAMA, nam);
-                sp.saveSPString(SharedPrefManager.SP_EMAIL, e);
+
+                User currentUser = sqliteHelper.Authenticate(new User(null, user, pass));
+
+                sp.saveSPString(SharedPrefManager.SP_NAMA, user);
+                sp.saveSPString(SharedPrefManager.SP_EMAIL, pass);
 
                 sp.saveSPBolean(SharedPrefManager.SP_SUDAH_LOGIN, true);
 
-                startActivity(new Intent(LogIn.this, BottomNav.class));
-
-                Toast.makeText(getApplicationContext(), "Success Login", Toast.LENGTH_SHORT).show();
-                createNotification("Berhasil Login",LogIn.this);
+                if (currentUser != null) {
+                    createNotification("Berhasil Login",LogIn.this);
+                    Intent intent = new Intent(LogIn.this, BottomNav.class);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    Toast.makeText(LogIn.this, "Periksa Kembali Username atau Password Anda", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
@@ -118,6 +129,6 @@ public class LogIn extends AppCompatActivity {
     }
 
     public void onRegisterClick(View view) {
-        startActivity(new Intent(this,Register.class));
+        startActivity(new Intent(this, Register.class));
     }
 }

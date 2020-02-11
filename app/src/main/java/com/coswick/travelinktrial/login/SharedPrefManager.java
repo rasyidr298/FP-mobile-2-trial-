@@ -1,4 +1,4 @@
-package com.coswick.travelinktrial.SharedPref;
+package com.coswick.travelinktrial.login;
 
 import android.content.Context;
 import android.content.SharedPreferences;
